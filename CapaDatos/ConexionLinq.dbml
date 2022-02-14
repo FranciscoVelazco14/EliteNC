@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Club" Class="ConexionLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-C2N6QTV;Initial Catalog=Club;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="ClubConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Login" Member="Login">
+    <Type Name="Login">
+      <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.EntrarLogin" Method="EntrarLogin">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="EntrarLoginResult">
+      <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
