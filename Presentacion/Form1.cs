@@ -47,5 +47,34 @@ namespace Presentacion
         {
 
         }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                PersonalLogic Pers = new PersonalLogic();
+                var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text);
+
+                if (TraeUsuarios.Count == 1)
+                {
+                    MessageBox.Show("Inicio de sesion");
+                }
+                else
+                {
+                    MessageBox.Show("No inicio");
+                }
+            }
+            catch
+            {
+
+            }
+
+        }
+            
     }
 }

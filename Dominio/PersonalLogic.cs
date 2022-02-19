@@ -11,14 +11,18 @@ namespace Dominio
 {
     public class PersonalLogic
     {
-        /*public List<Personal> EntrarLogin()
+        public List<Personal> EntrarLogin(string U, String C)
         {
             ConexionLinqDataContext L_Database = new ConexionLinqDataContext();
-            var Personal = from e in L_Database.EntrarLogin("Francisco", "F123")
-                            select new Personal { };
-            return
+            var Usuarios = from e in L_Database.EntrarLogin(U, C)
+                           select new Personal
+                           {
+                               L_Usuario = e.usuario,
+                               L_Contraseña = e.contraseña
+                            };
+            return Usuarios.ToList();
         }
-        */
+       
     }
     
 }

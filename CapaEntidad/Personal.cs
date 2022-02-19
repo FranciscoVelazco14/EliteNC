@@ -17,6 +17,11 @@ namespace CapaEntidad
             get{ return this.Usuario; }
             set { this.Usuario = value; }
         }
+        public string L_Contraseña
+        {
+            get { return this.Contraseña; }
+            set { this.Contraseña = value; }
+        }
     }
 
 
