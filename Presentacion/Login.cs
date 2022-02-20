@@ -12,9 +12,9 @@ using Dominio;
 
 namespace Presentacion
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -63,6 +63,9 @@ namespace Presentacion
                 if (TraeUsuarios.Count == 1)
                 {
                     MessageBox.Show("Inicio de sesion");
+                    MenuPrincipal MenuPrincipal_V = new MenuPrincipal();
+                    this.Hide();
+                    MenuPrincipal_V.Show();
                 }
                 else
                 {
@@ -75,6 +78,33 @@ namespace Presentacion
             }
 
         }
-            
+
+        private void btnRegistrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                PersonalLogic Pers = new PersonalLogic();
+                var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text);
+
+                foreach (var Elemento in TraeUsuarios)
+                {
+                    if (Elemento.L_Usuario == "Francisco" && Elemento.L_Contraseña == "F123")
+                    {
+                        MessageBox.Show("Bienvenido usuario administrador");
+                        RegistrarNuevoUsuario registrarNuevoUsuario_V = new RegistrarNuevoUsuario();
+                        
+                        registrarNuevoUsuario_V.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingresa el usuario administrador");
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
     }
 }
