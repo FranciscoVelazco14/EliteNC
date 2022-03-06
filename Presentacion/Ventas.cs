@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class RegistrarNuevoUsuario : Form
+    public partial class Ventas : Form
     {
-        public RegistrarNuevoUsuario()
+        public Ventas()
         {
             InitializeComponent();
         }
 
-        private void RegistrarNuevoUsuario_Load(object sender, EventArgs e)
+        private void Ventas_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        private void RegistrarNuevoUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Login Login_v = new Login();
-            Login_v.Show();
+            this.Close();
         }
     }
 }

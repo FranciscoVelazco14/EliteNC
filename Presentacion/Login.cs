@@ -92,8 +92,8 @@ namespace Presentacion
                     {
                         MessageBox.Show("Bienvenido usuario administrador");
                         RegistrarNuevoUsuario registrarNuevoUsuario_V = new RegistrarNuevoUsuario();
-                        
                         registrarNuevoUsuario_V.Show();
+                        this.Hide();
                     }
                     else
                     {
