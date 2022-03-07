@@ -64,7 +64,8 @@ namespace Presentacion
                 {
                     MessageBox.Show("Inicio de sesion");
                     MenuPrincipal MenuPrincipal_V = new MenuPrincipal();
-                    MenuPrincipal_V.InformacionUsuario.Text += txtUsuario.Text;
+                    MenuPrincipal_V.InformacionUsuario.Text += TraeUsuarios[0].L_Usuario +"\nRegistro: "+TraeUsuarios[0].L_Fecha ;
+                    //MenuPrincipal_V.ImagenUsuario.Image = TraeUsuarios[0].L_Usuario;
                     this.Hide();
                     MenuPrincipal_V.Show();
                 }

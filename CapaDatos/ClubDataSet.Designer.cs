@@ -1232,6 +1232,10 @@ namespace CapaDatos {
             
             private global::System.Data.DataColumn columncontraseña;
             
+            private global::System.Data.DataColumn columnfecha;
+            
+            private global::System.Data.DataColumn columnfotografia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public LoginDataTable() {
@@ -1283,6 +1287,22 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fechaColumn {
+                get {
+                    return this.columnfecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn fotografiaColumn {
+                get {
+                    return this.columnfotografia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1318,11 +1338,13 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public LoginRow AddLoginRow(string usuario, string contraseña) {
+            public LoginRow AddLoginRow(string usuario, string contraseña, string fecha, string fotografia) {
                 LoginRow rowLoginRow = ((LoginRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         usuario,
-                        contraseña};
+                        contraseña,
+                        fecha,
+                        fotografia};
                 rowLoginRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLoginRow);
                 return rowLoginRow;
@@ -1347,6 +1369,8 @@ namespace CapaDatos {
             internal void InitVars() {
                 this.columnusuario = base.Columns["usuario"];
                 this.columncontraseña = base.Columns["contraseña"];
+                this.columnfecha = base.Columns["fecha"];
+                this.columnfotografia = base.Columns["fotografia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1356,6 +1380,10 @@ namespace CapaDatos {
                 base.Columns.Add(this.columnusuario);
                 this.columncontraseña = new global::System.Data.DataColumn("contraseña", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncontraseña);
+                this.columnfecha = new global::System.Data.DataColumn("fecha", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfecha);
+                this.columnfotografia = new global::System.Data.DataColumn("fotografia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfotografia);
                 this.columnusuario.MaxLength = 50;
                 this.columncontraseña.MaxLength = 50;
             }
@@ -2126,6 +2154,38 @@ namespace CapaDatos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string fecha {
+                get {
+                    try {
+                        return ((string)(this[this.tableLogin.fechaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha\' de la tabla \'Login\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLogin.fechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string fotografia {
+                get {
+                    try {
+                        return ((string)(this[this.tableLogin.fotografiaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fotografia\' de la tabla \'Login\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableLogin.fotografiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsusuarioNull() {
                 return this.IsNull(this.tableLogin.usuarioColumn);
             }
@@ -2146,6 +2206,30 @@ namespace CapaDatos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetcontraseñaNull() {
                 this[this.tableLogin.contraseñaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfechaNull() {
+                return this.IsNull(this.tableLogin.fechaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfechaNull() {
+                this[this.tableLogin.fechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfotografiaNull() {
+                return this.IsNull(this.tableLogin.fotografiaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfotografiaNull() {
+                this[this.tableLogin.fotografiaColumn] = global::System.Convert.DBNull;
             }
         }
         

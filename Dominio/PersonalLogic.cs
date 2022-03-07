@@ -18,7 +18,8 @@ namespace Dominio
                            select new Personal
                            {
                                L_Usuario = e.usuario,
-                               L_Contraseña = e.contraseña
+                               L_Contraseña = e.contraseña,
+                               L_Fecha = (DateTime)e.fecha
                             };
             return Usuarios.ToList();
         }

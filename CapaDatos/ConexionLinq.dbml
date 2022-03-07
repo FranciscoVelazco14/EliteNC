@@ -4,6 +4,8 @@
     <Type Name="Login">
       <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.EntrarLogin" Method="EntrarLogin">
@@ -12,6 +14,8 @@
     <ElementType Name="EntrarLoginResult">
       <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

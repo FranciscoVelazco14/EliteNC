@@ -86,6 +86,10 @@ namespace CapaDatos
 		
 		private string _contraseña;
 		
+		private System.Data.Linq.Binary _fotografia;
+		
+		private System.Nullable<System.DateTime> _fecha;
+		
 		public Login()
 		{
 		}
@@ -121,6 +125,38 @@ namespace CapaDatos
 				}
 			}
 		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fotografia", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary fotografia
+		{
+			get
+			{
+				return this._fotografia;
+			}
+			set
+			{
+				if ((this._fotografia != value))
+				{
+					this._fotografia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date")]
+		public System.Nullable<System.DateTime> fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				if ((this._fecha != value))
+				{
+					this._fecha = value;
+				}
+			}
+		}
 	}
 	
 	public partial class EntrarLoginResult
@@ -129,6 +165,10 @@ namespace CapaDatos
 		private string _usuario;
 		
 		private string _contraseña;
+		
+		private System.Data.Linq.Binary _fotografia;
+		
+		private System.Nullable<System.DateTime> _fecha;
 		
 		public EntrarLoginResult()
 		{
@@ -162,6 +202,38 @@ namespace CapaDatos
 				if ((this._contraseña != value))
 				{
 					this._contraseña = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fotografia", DbType="Image")]
+		public System.Data.Linq.Binary fotografia
+		{
+			get
+			{
+				return this._fotografia;
+			}
+			set
+			{
+				if ((this._fotografia != value))
+				{
+					this._fotografia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date")]
+		public System.Nullable<System.DateTime> fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				if ((this._fecha != value))
+				{
+					this._fecha = value;
 				}
 			}
 		}

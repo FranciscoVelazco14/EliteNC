@@ -11,6 +11,8 @@ namespace CapaEntidad
     {
         private string Usuario;
         private string Contraseña;
+        private string Imagen;
+        private DateTime Fecha;
 
         public string L_Usuario
         {
@@ -21,6 +23,18 @@ namespace CapaEntidad
         {
             get { return this.Contraseña; }
             set { this.Contraseña = value; }
+        }
+
+        public string L_Imagen
+        {
+            get { return this.Imagen; }
+            set { this.Imagen = value; }
+        }
+
+        public DateTime L_Fecha
+        {
+            get { return this.Fecha; }
+            set { this.Fecha = value; }
         }
     }
 

@@ -55,6 +55,7 @@ namespace Presentacion
         {
             PanelVentas.Visible = false;
             PanelInventario.Visible = false;
+            PanelConfiguracion.Visible = false;
         }
         private void OcultarSubMenus()
         {
@@ -65,6 +66,10 @@ namespace Presentacion
             if (PanelInventario.Visible == true)
             {
                 PanelInventario.Visible = false;
+            }
+            if (PanelConfiguracion.Visible==true)
+            {
+                PanelConfiguracion.Visible = false;
             }
         }
         private void MostrarSubMenus(Panel SubMenus)
@@ -166,11 +171,27 @@ namespace Presentacion
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Estas segur@ que quieres cerrar sesion?" ,"Cerrar sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Estas segur@ que quieres cerrar sesion?", "Cerrar sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (result == DialogResult.Yes)
             {
                 this.Close();
             }
+        }
+
+        private void Configuracion_Click(object sender, EventArgs e)
+        {
+
+            MostrarSubMenus(PanelConfiguracion);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
