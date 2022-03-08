@@ -32,7 +32,6 @@ namespace Presentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.PanelMenuLateralIzquierdo = new System.Windows.Forms.Panel();
             this.PanelConfiguracion = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.Configuracion = new System.Windows.Forms.Button();
@@ -53,6 +52,7 @@ namespace Presentacion
             this.InformacionUsuario = new System.Windows.Forms.Label();
             this.PanelInformacion = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.PanelMenuLateralIzquierdo.SuspendLayout();
             this.PanelConfiguracion.SuspendLayout();
             this.PanelInventario.SuspendLayout();
@@ -88,25 +88,10 @@ namespace Presentacion
             this.PanelConfiguracion.Controls.Add(this.button3);
             this.PanelConfiguracion.Controls.Add(this.button4);
             this.PanelConfiguracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelConfiguracion.Location = new System.Drawing.Point(0, 525);
+            this.PanelConfiguracion.Location = new System.Drawing.Point(0, 537);
             this.PanelConfiguracion.Name = "PanelConfiguracion";
             this.PanelConfiguracion.Size = new System.Drawing.Size(186, 120);
             this.PanelConfiguracion.TabIndex = 6;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(0, 80);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(186, 40);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -147,7 +132,7 @@ namespace Presentacion
             this.Configuracion.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.Configuracion.Image = ((System.Drawing.Image)(resources.GetObject("Configuracion.Image")));
             this.Configuracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Configuracion.Location = new System.Drawing.Point(0, 470);
+            this.Configuracion.Location = new System.Drawing.Point(0, 482);
             this.Configuracion.Name = "Configuracion";
             this.Configuracion.Size = new System.Drawing.Size(186, 55);
             this.Configuracion.TabIndex = 5;
@@ -163,7 +148,7 @@ namespace Presentacion
             this.PanelInventario.Controls.Add(this.button15);
             this.PanelInventario.Controls.Add(this.button16);
             this.PanelInventario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelInventario.Location = new System.Drawing.Point(0, 350);
+            this.PanelInventario.Location = new System.Drawing.Point(0, 362);
             this.PanelInventario.Name = "PanelInventario";
             this.PanelInventario.Size = new System.Drawing.Size(186, 120);
             this.PanelInventario.TabIndex = 4;
@@ -225,7 +210,7 @@ namespace Presentacion
             this.ModuloInventario.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.ModuloInventario.Image = ((System.Drawing.Image)(resources.GetObject("ModuloInventario.Image")));
             this.ModuloInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ModuloInventario.Location = new System.Drawing.Point(0, 295);
+            this.ModuloInventario.Location = new System.Drawing.Point(0, 307);
             this.ModuloInventario.Name = "ModuloInventario";
             this.ModuloInventario.Size = new System.Drawing.Size(186, 55);
             this.ModuloInventario.TabIndex = 3;
@@ -241,7 +226,7 @@ namespace Presentacion
             this.PanelVentas.Controls.Add(this.button12);
             this.PanelVentas.Controls.Add(this.button11);
             this.PanelVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelVentas.Location = new System.Drawing.Point(0, 175);
+            this.PanelVentas.Location = new System.Drawing.Point(0, 187);
             this.PanelVentas.Name = "PanelVentas";
             this.PanelVentas.Size = new System.Drawing.Size(186, 120);
             this.PanelVentas.TabIndex = 2;
@@ -303,7 +288,7 @@ namespace Presentacion
             this.ModuloVentas.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.ModuloVentas.Image = ((System.Drawing.Image)(resources.GetObject("ModuloVentas.Image")));
             this.ModuloVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ModuloVentas.Location = new System.Drawing.Point(0, 120);
+            this.ModuloVentas.Location = new System.Drawing.Point(0, 132);
             this.ModuloVentas.Name = "ModuloVentas";
             this.ModuloVentas.Size = new System.Drawing.Size(186, 55);
             this.ModuloVentas.TabIndex = 1;
@@ -318,7 +303,7 @@ namespace Presentacion
             this.PanelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelLogo.Location = new System.Drawing.Point(0, 0);
             this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(186, 120);
+            this.PanelLogo.Size = new System.Drawing.Size(186, 132);
             this.PanelLogo.TabIndex = 0;
             // 
             // PanelLogoE
@@ -327,7 +312,7 @@ namespace Presentacion
             this.PanelLogoE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.PanelLogoE.Location = new System.Drawing.Point(3, 9);
             this.PanelLogoE.Name = "PanelLogoE";
-            this.PanelLogoE.Size = new System.Drawing.Size(194, 94);
+            this.PanelLogoE.Size = new System.Drawing.Size(194, 95);
             this.PanelLogoE.TabIndex = 1;
             this.PanelLogoE.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -391,6 +376,21 @@ namespace Presentacion
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Location = new System.Drawing.Point(0, 80);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(186, 40);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button2";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,10 +437,10 @@ namespace Presentacion
         public System.Windows.Forms.Label InformacionUsuario;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel PanelConfiguracion;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button Configuracion;
         public System.Windows.Forms.PictureBox ImagenUsuario;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -131,7 +131,7 @@ namespace Presentacion
         }
 
         private Form FormularioActivo = null;
-        private void FormulariosHijos(Form FormularioHijo)
+        public void FormulariosHijos(Form FormularioHijo)
         {
             if (FormularioActivo != null) 
             {
