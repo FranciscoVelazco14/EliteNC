@@ -33,7 +33,7 @@ namespace CapaDatos
     #endregion
 		
 		public ConexionLinqDataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.ClubConnectionString, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.ClubConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -75,6 +75,20 @@ namespace CapaDatos
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, contraseña);
 			return ((ISingleResult<EntrarLoginResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EntrarLogin")]
+		public ISingleResult<EntrarLoginResult1> EntrarLogin1([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(50)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, contraseña);
+			return ((ISingleResult<EntrarLoginResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SelectEmpleados")]
+		public ISingleResult<SelectEmpleadosResult> SelectEmpleados()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<SelectEmpleadosResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -171,6 +185,166 @@ namespace CapaDatos
 		private System.Nullable<System.DateTime> _fecha;
 		
 		public EntrarLoginResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(50)")]
+		public string usuario
+		{
+			get
+			{
+				return this._usuario;
+			}
+			set
+			{
+				if ((this._usuario != value))
+				{
+					this._usuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contraseña", DbType="VarChar(50)")]
+		public string contraseña
+		{
+			get
+			{
+				return this._contraseña;
+			}
+			set
+			{
+				if ((this._contraseña != value))
+				{
+					this._contraseña = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fotografia", DbType="Image")]
+		public System.Data.Linq.Binary fotografia
+		{
+			get
+			{
+				return this._fotografia;
+			}
+			set
+			{
+				if ((this._fotografia != value))
+				{
+					this._fotografia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date")]
+		public System.Nullable<System.DateTime> fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				if ((this._fecha != value))
+				{
+					this._fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class EntrarLoginResult1
+	{
+		
+		private string _usuario;
+		
+		private string _contraseña;
+		
+		private System.Data.Linq.Binary _fotografia;
+		
+		private System.Nullable<System.DateTime> _fecha;
+		
+		public EntrarLoginResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(50)")]
+		public string usuario
+		{
+			get
+			{
+				return this._usuario;
+			}
+			set
+			{
+				if ((this._usuario != value))
+				{
+					this._usuario = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contraseña", DbType="VarChar(50)")]
+		public string contraseña
+		{
+			get
+			{
+				return this._contraseña;
+			}
+			set
+			{
+				if ((this._contraseña != value))
+				{
+					this._contraseña = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fotografia", DbType="Image")]
+		public System.Data.Linq.Binary fotografia
+		{
+			get
+			{
+				return this._fotografia;
+			}
+			set
+			{
+				if ((this._fotografia != value))
+				{
+					this._fotografia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date")]
+		public System.Nullable<System.DateTime> fecha
+		{
+			get
+			{
+				return this._fecha;
+			}
+			set
+			{
+				if ((this._fecha != value))
+				{
+					this._fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class SelectEmpleadosResult
+	{
+		
+		private string _usuario;
+		
+		private string _contraseña;
+		
+		private System.Data.Linq.Binary _fotografia;
+		
+		private System.Nullable<System.DateTime> _fecha;
+		
+		public SelectEmpleadosResult()
 		{
 		}
 		

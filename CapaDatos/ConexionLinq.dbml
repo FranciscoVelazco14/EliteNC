@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Club" Class="ConexionLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-C2N6QTV;Initial Catalog=Club;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="ClubConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=FRANCISCOV;Initial Catalog=Club;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="ClubConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Login" Member="Login">
     <Type Name="Login">
       <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
@@ -12,6 +12,24 @@
     <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
     <ElementType Name="EntrarLoginResult">
+      <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.EntrarLogin" Method="EntrarLogin1">
+    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="EntrarLoginResult1">
+      <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SelectEmpleados" Method="SelectEmpleados">
+    <ElementType Name="SelectEmpleadosResult">
       <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />

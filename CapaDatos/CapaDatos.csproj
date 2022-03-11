@@ -48,6 +48,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ClubDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ConexionLinq.cs">
+      <DependentUpon>ConexionLinq.dbml</DependentUpon>
+    </Compile>
     <Compile Include="ConexionLinq.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

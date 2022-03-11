@@ -32,6 +32,7 @@ namespace Presentacion
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.PanelMenuLateralIzquierdo = new System.Windows.Forms.Panel();
             this.PanelConfiguracion = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.Configuracion = new System.Windows.Forms.Button();
@@ -51,8 +52,11 @@ namespace Presentacion
             this.ImagenUsuario = new System.Windows.Forms.PictureBox();
             this.InformacionUsuario = new System.Windows.Forms.Label();
             this.PanelInformacion = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelMenuLateralIzquierdo.SuspendLayout();
             this.PanelConfiguracion.SuspendLayout();
             this.PanelInventario.SuspendLayout();
@@ -61,6 +65,7 @@ namespace Presentacion
             this.PanelFormularios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenUsuario)).BeginInit();
             this.PanelInformacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenuLateralIzquierdo
@@ -92,6 +97,21 @@ namespace Presentacion
             this.PanelConfiguracion.Name = "PanelConfiguracion";
             this.PanelConfiguracion.Size = new System.Drawing.Size(186, 120);
             this.PanelConfiguracion.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.Location = new System.Drawing.Point(0, 80);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(186, 40);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button2";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -319,6 +339,7 @@ namespace Presentacion
             // PanelFormularios
             // 
             this.PanelFormularios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(117)))));
+            this.PanelFormularios.Controls.Add(this.dataGridView1);
             this.PanelFormularios.Controls.Add(this.ImagenUsuario);
             this.PanelFormularios.Controls.Add(this.InformacionUsuario);
             this.PanelFormularios.Location = new System.Drawing.Point(203, 60);
@@ -351,6 +372,8 @@ namespace Presentacion
             // PanelInformacion
             // 
             this.PanelInformacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(117)))));
+            this.PanelInformacion.Controls.Add(this.button6);
+            this.PanelInformacion.Controls.Add(this.button5);
             this.PanelInformacion.Controls.Add(this.button1);
             this.PanelInformacion.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelInformacion.Location = new System.Drawing.Point(203, 0);
@@ -358,6 +381,23 @@ namespace Presentacion
             this.PanelInformacion.Size = new System.Drawing.Size(812, 61);
             this.PanelInformacion.TabIndex = 5;
             this.PanelInformacion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelInformacion_MouseDown);
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F);
+            this.button5.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(545, 9);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(147, 45);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Cambiar usuario";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button1
             // 
@@ -367,29 +407,46 @@ namespace Presentacion
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(673, 9);
+            this.button1.Location = new System.Drawing.Point(708, 9);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 45);
+            this.button1.Size = new System.Drawing.Size(80, 45);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Cerrar sesion";
+            this.button1.Text = "Salir";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // button6
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Location = new System.Drawing.Point(0, 80);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(186, 40);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button2";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F);
+            this.button6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(333, 8);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(147, 45);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Consulta prueba";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre});
+            this.dataGridView1.Location = new System.Drawing.Point(53, 156);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 321);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombres";
+            this.Nombre.Name = "Nombre";
             // 
             // MenuPrincipal
             // 
@@ -414,6 +471,7 @@ namespace Presentacion
             this.PanelFormularios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenUsuario)).EndInit();
             this.PanelInformacion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -442,5 +500,9 @@ namespace Presentacion
         private System.Windows.Forms.Button Configuracion;
         public System.Windows.Forms.PictureBox ImagenUsuario;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }

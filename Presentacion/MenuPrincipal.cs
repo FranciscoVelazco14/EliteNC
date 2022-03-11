@@ -176,10 +176,10 @@ namespace Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("¿Estas segur@ que quieres cerrar sesion?", "Cerrar sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (result == DialogResult.Yes)
+            DialogResult salir = MessageBox.Show("¿Estas seguro(a) que quieres salir de la aplicacion?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (salir == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
         }
 
@@ -192,6 +192,25 @@ namespace Presentacion
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DialogResult cerrar = MessageBox.Show("¿Estas seguro(a) que quieres cerrar sesion?", "Cerrar sesion", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (cerrar == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            
+                PersonalLogic Consulta = new PersonalLogic();
+                var ConsultarLogin = Consulta.SelectEmpleados();
+
+                
+                    
         }
     }
 }
