@@ -30,10 +30,13 @@ namespace CapaDatos
 		
     #region Definiciones de métodos de extensibilidad
     partial void OnCreated();
+    partial void InsertEmpleados(Empleados instance);
+    partial void UpdateEmpleados(Empleados instance);
+    partial void DeleteEmpleados(Empleados instance);
     #endregion
 		
 		public ConexionLinqDataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.ClubConnectionString1, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.ClubConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -62,26 +65,19 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Login> Login
+		public System.Data.Linq.Table<Empleados> Empleados
 		{
 			get
 			{
-				return this.GetTable<Login>();
+				return this.GetTable<Empleados>();
 			}
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EntrarLogin")]
-		public ISingleResult<EntrarLoginResult> EntrarLogin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(50)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña)
+		public ISingleResult<EntrarLoginResult> EntrarLogin([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(50)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, contraseña);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, contraseña, id);
 			return ((ISingleResult<EntrarLoginResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.EntrarLogin")]
-		public ISingleResult<EntrarLoginResult1> EntrarLogin1([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Usuario", DbType="VarChar(50)")] string usuario, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), usuario, contraseña);
-			return ((ISingleResult<EntrarLoginResult1>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.SelectEmpleados")]
@@ -90,85 +86,265 @@ namespace CapaDatos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<SelectEmpleadosResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearEmpleado")]
+		public int CrearEmpleado([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tel", DbType="VarChar(50)")] string tel, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Puesto", DbType="VarChar(50)")] string puesto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(50)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, contraseña, foto, tel, direccion, puesto, correo, fecha);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Login")]
-	public partial class Login
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Empleados")]
+	public partial class Empleados : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private string _usuario;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _contraseña;
+		private int _IdEmpleados;
 		
-		private System.Data.Linq.Binary _fotografia;
+		private string _Nombre;
 		
-		private System.Nullable<System.DateTime> _fecha;
+		private string _Contraseña;
 		
-		public Login()
+		private System.Data.Linq.Binary _Fotografia;
+		
+		private string _Telefono;
+		
+		private string _Direccion;
+		
+		private string _Puesto;
+		
+		private string _Correo;
+		
+		private System.Nullable<System.DateTime> _Fecha;
+		
+    #region Definiciones de métodos de extensibilidad
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdEmpleadosChanging(int value);
+    partial void OnIdEmpleadosChanged();
+    partial void OnNombreChanging(string value);
+    partial void OnNombreChanged();
+    partial void OnContraseñaChanging(string value);
+    partial void OnContraseñaChanged();
+    partial void OnFotografiaChanging(System.Data.Linq.Binary value);
+    partial void OnFotografiaChanged();
+    partial void OnTelefonoChanging(string value);
+    partial void OnTelefonoChanged();
+    partial void OnDireccionChanging(string value);
+    partial void OnDireccionChanged();
+    partial void OnPuestoChanging(string value);
+    partial void OnPuestoChanged();
+    partial void OnCorreoChanging(string value);
+    partial void OnCorreoChanged();
+    partial void OnFechaChanging(System.Nullable<System.DateTime> value);
+    partial void OnFechaChanged();
+    #endregion
+		
+		public Empleados()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(50)")]
-		public string usuario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdEmpleados", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdEmpleados
 		{
 			get
 			{
-				return this._usuario;
+				return this._IdEmpleados;
 			}
 			set
 			{
-				if ((this._usuario != value))
+				if ((this._IdEmpleados != value))
 				{
-					this._usuario = value;
+					this.OnIdEmpleadosChanging(value);
+					this.SendPropertyChanging();
+					this._IdEmpleados = value;
+					this.SendPropertyChanged("IdEmpleados");
+					this.OnIdEmpleadosChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contraseña", DbType="VarChar(50)")]
-		public string contraseña
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nombre
 		{
 			get
 			{
-				return this._contraseña;
+				return this._Nombre;
 			}
 			set
 			{
-				if ((this._contraseña != value))
+				if ((this._Nombre != value))
 				{
-					this._contraseña = value;
+					this.OnNombreChanging(value);
+					this.SendPropertyChanging();
+					this._Nombre = value;
+					this.SendPropertyChanged("Nombre");
+					this.OnNombreChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fotografia", DbType="Image", UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary fotografia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contraseña", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Contraseña
 		{
 			get
 			{
-				return this._fotografia;
+				return this._Contraseña;
 			}
 			set
 			{
-				if ((this._fotografia != value))
+				if ((this._Contraseña != value))
 				{
-					this._fotografia = value;
+					this.OnContraseñaChanging(value);
+					this.SendPropertyChanging();
+					this._Contraseña = value;
+					this.SendPropertyChanged("Contraseña");
+					this.OnContraseñaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date")]
-		public System.Nullable<System.DateTime> fecha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fotografia", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Fotografia
 		{
 			get
 			{
-				return this._fecha;
+				return this._Fotografia;
 			}
 			set
 			{
-				if ((this._fecha != value))
+				if ((this._Fotografia != value))
 				{
-					this._fecha = value;
+					this.OnFotografiaChanging(value);
+					this.SendPropertyChanging();
+					this._Fotografia = value;
+					this.SendPropertyChanged("Fotografia");
+					this.OnFotografiaChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(50)")]
+		public string Telefono
+		{
+			get
+			{
+				return this._Telefono;
+			}
+			set
+			{
+				if ((this._Telefono != value))
+				{
+					this.OnTelefonoChanging(value);
+					this.SendPropertyChanging();
+					this._Telefono = value;
+					this.SendPropertyChanged("Telefono");
+					this.OnTelefonoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Direccion", DbType="VarChar(50)")]
+		public string Direccion
+		{
+			get
+			{
+				return this._Direccion;
+			}
+			set
+			{
+				if ((this._Direccion != value))
+				{
+					this.OnDireccionChanging(value);
+					this.SendPropertyChanging();
+					this._Direccion = value;
+					this.SendPropertyChanged("Direccion");
+					this.OnDireccionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Puesto", DbType="VarChar(50)")]
+		public string Puesto
+		{
+			get
+			{
+				return this._Puesto;
+			}
+			set
+			{
+				if ((this._Puesto != value))
+				{
+					this.OnPuestoChanging(value);
+					this.SendPropertyChanging();
+					this._Puesto = value;
+					this.SendPropertyChanged("Puesto");
+					this.OnPuestoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Correo", DbType="VarChar(50)")]
+		public string Correo
+		{
+			get
+			{
+				return this._Correo;
+			}
+			set
+			{
+				if ((this._Correo != value))
+				{
+					this.OnCorreoChanging(value);
+					this.SendPropertyChanging();
+					this._Correo = value;
+					this.SendPropertyChanged("Correo");
+					this.OnCorreoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this.OnFechaChanging(value);
+					this.SendPropertyChanging();
+					this._Fecha = value;
+					this.SendPropertyChanged("Fecha");
+					this.OnFechaChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -176,158 +352,168 @@ namespace CapaDatos
 	public partial class EntrarLoginResult
 	{
 		
-		private string _usuario;
+		private int _IdEmpleados;
 		
-		private string _contraseña;
+		private string _Nombre;
 		
-		private System.Data.Linq.Binary _fotografia;
+		private string _Contraseña;
 		
-		private System.Nullable<System.DateTime> _fecha;
+		private System.Data.Linq.Binary _Fotografia;
+		
+		private string _Telefono;
+		
+		private string _Direccion;
+		
+		private string _Puesto;
+		
+		private string _Correo;
+		
+		private System.Nullable<System.DateTime> _Fecha;
 		
 		public EntrarLoginResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(50)")]
-		public string usuario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdEmpleados", DbType="Int NOT NULL")]
+		public int IdEmpleados
 		{
 			get
 			{
-				return this._usuario;
+				return this._IdEmpleados;
 			}
 			set
 			{
-				if ((this._usuario != value))
+				if ((this._IdEmpleados != value))
 				{
-					this._usuario = value;
+					this._IdEmpleados = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contraseña", DbType="VarChar(50)")]
-		public string contraseña
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nombre
 		{
 			get
 			{
-				return this._contraseña;
+				return this._Nombre;
 			}
 			set
 			{
-				if ((this._contraseña != value))
+				if ((this._Nombre != value))
 				{
-					this._contraseña = value;
+					this._Nombre = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fotografia", DbType="Image")]
-		public System.Data.Linq.Binary fotografia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contraseña", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Contraseña
 		{
 			get
 			{
-				return this._fotografia;
+				return this._Contraseña;
 			}
 			set
 			{
-				if ((this._fotografia != value))
+				if ((this._Contraseña != value))
 				{
-					this._fotografia = value;
+					this._Contraseña = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date")]
-		public System.Nullable<System.DateTime> fecha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fotografia", DbType="Image")]
+		public System.Data.Linq.Binary Fotografia
 		{
 			get
 			{
-				return this._fecha;
+				return this._Fotografia;
 			}
 			set
 			{
-				if ((this._fecha != value))
+				if ((this._Fotografia != value))
 				{
-					this._fecha = value;
-				}
-			}
-		}
-	}
-	
-	public partial class EntrarLoginResult1
-	{
-		
-		private string _usuario;
-		
-		private string _contraseña;
-		
-		private System.Data.Linq.Binary _fotografia;
-		
-		private System.Nullable<System.DateTime> _fecha;
-		
-		public EntrarLoginResult1()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(50)")]
-		public string usuario
-		{
-			get
-			{
-				return this._usuario;
-			}
-			set
-			{
-				if ((this._usuario != value))
-				{
-					this._usuario = value;
+					this._Fotografia = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contraseña", DbType="VarChar(50)")]
-		public string contraseña
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(50)")]
+		public string Telefono
 		{
 			get
 			{
-				return this._contraseña;
+				return this._Telefono;
 			}
 			set
 			{
-				if ((this._contraseña != value))
+				if ((this._Telefono != value))
 				{
-					this._contraseña = value;
+					this._Telefono = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fotografia", DbType="Image")]
-		public System.Data.Linq.Binary fotografia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Direccion", DbType="VarChar(50)")]
+		public string Direccion
 		{
 			get
 			{
-				return this._fotografia;
+				return this._Direccion;
 			}
 			set
 			{
-				if ((this._fotografia != value))
+				if ((this._Direccion != value))
 				{
-					this._fotografia = value;
+					this._Direccion = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date")]
-		public System.Nullable<System.DateTime> fecha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Puesto", DbType="VarChar(50)")]
+		public string Puesto
 		{
 			get
 			{
-				return this._fecha;
+				return this._Puesto;
 			}
 			set
 			{
-				if ((this._fecha != value))
+				if ((this._Puesto != value))
 				{
-					this._fecha = value;
+					this._Puesto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Correo", DbType="VarChar(50)")]
+		public string Correo
+		{
+			get
+			{
+				return this._Correo;
+			}
+			set
+			{
+				if ((this._Correo != value))
+				{
+					this._Correo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
 				}
 			}
 		}
@@ -336,78 +522,168 @@ namespace CapaDatos
 	public partial class SelectEmpleadosResult
 	{
 		
-		private string _usuario;
+		private int _IdEmpleados;
 		
-		private string _contraseña;
+		private string _Nombre;
 		
-		private System.Data.Linq.Binary _fotografia;
+		private string _Contraseña;
 		
-		private System.Nullable<System.DateTime> _fecha;
+		private System.Data.Linq.Binary _Fotografia;
+		
+		private string _Telefono;
+		
+		private string _Direccion;
+		
+		private string _Puesto;
+		
+		private string _Correo;
+		
+		private System.Nullable<System.DateTime> _Fecha;
 		
 		public SelectEmpleadosResult()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_usuario", DbType="VarChar(50)")]
-		public string usuario
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdEmpleados", DbType="Int NOT NULL")]
+		public int IdEmpleados
 		{
 			get
 			{
-				return this._usuario;
+				return this._IdEmpleados;
 			}
 			set
 			{
-				if ((this._usuario != value))
+				if ((this._IdEmpleados != value))
 				{
-					this._usuario = value;
+					this._IdEmpleados = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contraseña", DbType="VarChar(50)")]
-		public string contraseña
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nombre", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nombre
 		{
 			get
 			{
-				return this._contraseña;
+				return this._Nombre;
 			}
 			set
 			{
-				if ((this._contraseña != value))
+				if ((this._Nombre != value))
 				{
-					this._contraseña = value;
+					this._Nombre = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fotografia", DbType="Image")]
-		public System.Data.Linq.Binary fotografia
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Contraseña", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Contraseña
 		{
 			get
 			{
-				return this._fotografia;
+				return this._Contraseña;
 			}
 			set
 			{
-				if ((this._fotografia != value))
+				if ((this._Contraseña != value))
 				{
-					this._fotografia = value;
+					this._Contraseña = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fecha", DbType="Date")]
-		public System.Nullable<System.DateTime> fecha
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fotografia", DbType="Image")]
+		public System.Data.Linq.Binary Fotografia
 		{
 			get
 			{
-				return this._fecha;
+				return this._Fotografia;
 			}
 			set
 			{
-				if ((this._fecha != value))
+				if ((this._Fotografia != value))
 				{
-					this._fecha = value;
+					this._Fotografia = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Telefono", DbType="VarChar(50)")]
+		public string Telefono
+		{
+			get
+			{
+				return this._Telefono;
+			}
+			set
+			{
+				if ((this._Telefono != value))
+				{
+					this._Telefono = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Direccion", DbType="VarChar(50)")]
+		public string Direccion
+		{
+			get
+			{
+				return this._Direccion;
+			}
+			set
+			{
+				if ((this._Direccion != value))
+				{
+					this._Direccion = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Puesto", DbType="VarChar(50)")]
+		public string Puesto
+		{
+			get
+			{
+				return this._Puesto;
+			}
+			set
+			{
+				if ((this._Puesto != value))
+				{
+					this._Puesto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Correo", DbType="VarChar(50)")]
+		public string Correo
+		{
+			get
+			{
+				return this._Correo;
+			}
+			set
+			{
+				if ((this._Correo != value))
+				{
+					this._Correo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fecha", DbType="DateTime")]
+		public System.Nullable<System.DateTime> Fecha
+		{
+			get
+			{
+				return this._Fecha;
+			}
+			set
+			{
+				if ((this._Fecha != value))
+				{
+					this._Fecha = value;
 				}
 			}
 		}

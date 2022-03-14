@@ -49,23 +49,22 @@ namespace Presentacion
             this.PanelLogo = new System.Windows.Forms.Panel();
             this.PanelLogoE = new System.Windows.Forms.Panel();
             this.PanelFormularios = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ImagenUsuario = new System.Windows.Forms.PictureBox();
             this.InformacionUsuario = new System.Windows.Forms.Label();
             this.PanelInformacion = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PanelMenuLateralIzquierdo.SuspendLayout();
             this.PanelConfiguracion.SuspendLayout();
             this.PanelInventario.SuspendLayout();
             this.PanelVentas.SuspendLayout();
             this.PanelLogo.SuspendLayout();
             this.PanelFormularios.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenUsuario)).BeginInit();
             this.PanelInformacion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenuLateralIzquierdo
@@ -347,12 +346,21 @@ namespace Presentacion
             this.PanelFormularios.Size = new System.Drawing.Size(812, 501);
             this.PanelFormularios.TabIndex = 4;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(31, 247);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(546, 178);
+            this.dataGridView1.TabIndex = 2;
+            // 
             // ImagenUsuario
             // 
             this.ImagenUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImagenUsuario.Location = new System.Drawing.Point(399, 60);
+            this.ImagenUsuario.Location = new System.Drawing.Point(426, 46);
             this.ImagenUsuario.Name = "ImagenUsuario";
-            this.ImagenUsuario.Size = new System.Drawing.Size(316, 310);
+            this.ImagenUsuario.Size = new System.Drawing.Size(362, 417);
+            this.ImagenUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImagenUsuario.TabIndex = 0;
             this.ImagenUsuario.TabStop = false;
             this.ImagenUsuario.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -381,6 +389,23 @@ namespace Presentacion
             this.PanelInformacion.Size = new System.Drawing.Size(812, 61);
             this.PanelInformacion.TabIndex = 5;
             this.PanelInformacion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PanelInformacion_MouseDown);
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F);
+            this.button6.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(333, 8);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(147, 45);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Consulta prueba";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -416,38 +441,6 @@ namespace Presentacion
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F);
-            this.button6.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(333, 8);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(147, 45);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Consulta prueba";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre});
-            this.dataGridView1.Location = new System.Drawing.Point(53, 156);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 321);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombres";
-            this.Nombre.Name = "Nombre";
-            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,6 +450,7 @@ namespace Presentacion
             this.Controls.Add(this.PanelFormularios);
             this.Controls.Add(this.PanelMenuLateralIzquierdo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MDI";
@@ -469,9 +463,9 @@ namespace Presentacion
             this.PanelLogo.ResumeLayout(false);
             this.PanelFormularios.ResumeLayout(false);
             this.PanelFormularios.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImagenUsuario)).EndInit();
             this.PanelInformacion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -503,6 +497,5 @@ namespace Presentacion
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
     }
 }

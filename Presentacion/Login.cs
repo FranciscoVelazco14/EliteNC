@@ -26,7 +26,7 @@ namespace Presentacion
 
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
-            if (txtUsuario.Text == "Usuario")
+            if (txtUsuario.Text == "Usuario/Id")
             {
                 txtUsuario.Text = "";
                 txtUsuario.ForeColor = Color.FromArgb(0, 120, 204);
@@ -58,14 +58,13 @@ namespace Presentacion
             try
             {
                 PersonalLogic Pers = new PersonalLogic();
-                var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text);
-
+                int.TryParse(txtUsuario.Text, out int txtId);
+                var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text,txtId);
                 if (TraeUsuarios.Count == 1)
-                {
+                { 
                     MessageBox.Show("Inicio de sesion");
                     MenuPrincipal MenuPrincipal_V = new MenuPrincipal();
                     MenuPrincipal_V.InformacionUsuario.Text += TraeUsuarios[0].L_Usuario +"\nRegistro: "+TraeUsuarios[0].L_Fecha ;
-                    //MenuPrincipal_V.ImagenUsuario.Image = TraeUsuarios[0].L_Usuario;
                     this.Hide();
                     MenuPrincipal_V.Show();
                 }
@@ -86,7 +85,8 @@ namespace Presentacion
             try
             {
                 PersonalLogic Pers = new PersonalLogic();
-                var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text);
+                int.TryParse(txtUsuario.Text, out int txtId);
+                var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text,txtId);
 
                 foreach (var Elemento in TraeUsuarios)
                 {
@@ -107,6 +107,11 @@ namespace Presentacion
             {
 
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -33,6 +33,10 @@
   <PropertyGroup>
     <StartupObject>Presentacion.Class1</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -48,30 +52,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.QuickStart">
-      <HintPath>..\..\..\..\Desktop\Uni\TELERIK\Telerik.QuickStart.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls">
-      <HintPath>..\..\..\..\Desktop\Uni\TELERIK\Telerik.WinControls.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.ChartView">
-      <HintPath>..\..\..\..\Desktop\Uni\TELERIK\Telerik.WinControls.ChartView.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.RadChart">
-      <HintPath>..\..\..\..\Desktop\Uni\TELERIK\Telerik.WinControls.RadChart.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.UI">
-      <HintPath>..\..\..\..\Desktop\Uni\TELERIK\Telerik.WinControls.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.WinControls.UI.Design">
-      <HintPath>..\..\..\..\Desktop\Uni\TELERIK\Telerik.WinControls.UI.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="TelerikCommon">
-      <HintPath>..\..\..\..\Desktop\Uni\TELERIK\TelerikCommon.dll</HintPath>
-    </Reference>
-    <Reference Include="TelerikData">
-      <HintPath>..\..\..\..\Desktop\Uni\TELERIK\TelerikData.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +127,12 @@
       <Project>{aaa9410c-9e1b-4ce8-8e77-90abedb31493}</Project>
       <Name>Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imagenes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="night-club-_1_.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

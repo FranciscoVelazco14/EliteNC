@@ -1,39 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Club" Class="ConexionLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=FRANCISCOV;Initial Catalog=Club;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="ClubConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Login" Member="Login">
-    <Type Name="Login">
-      <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
-      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-C2N6QTV;Initial Catalog=Club;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="ClubConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Empleados" Member="Empleados">
+    <Type Name="Empleados">
+      <Column Name="IdEmpleados" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Puesto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.EntrarLogin" Method="EntrarLogin">
     <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
     <ElementType Name="EntrarLoginResult">
-      <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
-      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </ElementType>
-  </Function>
-  <Function Name="dbo.EntrarLogin" Method="EntrarLogin1">
-    <Parameter Name="Usuario" Parameter="usuario" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="EntrarLoginResult1">
-      <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
-      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IdEmpleados" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Puesto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.SelectEmpleados" Method="SelectEmpleados">
     <ElementType Name="SelectEmpleadosResult">
-      <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
-      <Column Name="fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IdEmpleados" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fotografia" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Puesto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.CrearEmpleado" Method="CrearEmpleado">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Contraseña" Parameter="contraseña" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Foto" Parameter="foto" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="Tel" Parameter="tel" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Puesto" Parameter="puesto" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Correo" Parameter="correo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

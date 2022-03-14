@@ -27,5 +27,20 @@ namespace Presentacion
             Login Login_v = new Login();
             Login_v.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog subirFoto = new OpenFileDialog();
+            DialogResult Rs = subirFoto.ShowDialog();
+            if (Rs == DialogResult.OK)
+            {
+                PicFotoEmpleado.Image = Image.FromFile(subirFoto.FileName);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

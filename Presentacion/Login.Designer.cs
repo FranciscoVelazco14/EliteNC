@@ -37,7 +37,7 @@ namespace Presentacion
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,10 +69,9 @@ namespace Presentacion
             this.txtUsuario.Location = new System.Drawing.Point(292, 125);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(337, 33);
-            this.txtUsuario.TabIndex = 1;
-            this.txtUsuario.Text = "Usuario";
+            this.txtUsuario.TabIndex = 3;
+            this.txtUsuario.Text = "Usuario/Id";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
             // 
             // txtContraseña
@@ -84,7 +83,7 @@ namespace Presentacion
             this.txtContraseña.Location = new System.Drawing.Point(292, 181);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(337, 33);
-            this.txtContraseña.TabIndex = 2;
+            this.txtContraseña.TabIndex = 4;
             this.txtContraseña.Text = "Contraseña";
             this.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
@@ -99,7 +98,7 @@ namespace Presentacion
             this.btnIngresar.Location = new System.Drawing.Point(292, 247);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(337, 43);
-            this.btnIngresar.TabIndex = 3;
+            this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
@@ -113,7 +112,7 @@ namespace Presentacion
             this.btnRegistrar.Location = new System.Drawing.Point(378, 300);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(160, 18);
-            this.btnRegistrar.TabIndex = 4;
+            this.btnRegistrar.TabIndex = 6;
             this.btnRegistrar.TabStop = true;
             this.btnRegistrar.Text = "¿Registrar nuevo usuario?";
             this.btnRegistrar.VisitedLinkColor = System.Drawing.Color.Blue;
@@ -122,27 +121,28 @@ namespace Presentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Unicode MS", 15.75F);
+            this.label1.Font = new System.Drawing.Font("Arial Unicode MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(420, 39);
+            this.label1.Location = new System.Drawing.Point(419, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 28);
-            this.label1.TabIndex = 5;
+            this.label1.Size = new System.Drawing.Size(90, 33);
+            this.label1.TabIndex = 1;
             this.label1.Text = "LOGIN";
             // 
-            // button2
+            // button3
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(628, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(21, 22);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.Control;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(624, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(25, 25);
+            this.button3.TabIndex = 1;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Login
             // 
@@ -150,7 +150,7 @@ namespace Presentacion
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(661, 392);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnIngresar);
@@ -158,6 +158,7 @@ namespace Presentacion
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -174,9 +175,9 @@ namespace Presentacion
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.LinkLabel btnRegistrar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.TextBox txtUsuario;
         public System.Windows.Forms.TextBox txtContraseña;
+        private System.Windows.Forms.Button button3;
     }
 }

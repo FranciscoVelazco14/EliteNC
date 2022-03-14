@@ -93,10 +93,21 @@ namespace Presentacion
 
         private void button11_Click(object sender, EventArgs e)
         {
-
-            FormulariosHijos(new Ventas());
+            /*if (PanelFormularios.Controls.Count == FormularioActivo.Controls.Count)
+            {
+            DialogResult Ventas = MessageBox.Show("¿Estas seguro de abrir modulo de ventas?\nSe perdera el actual", "Ventas", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (Ventas == DialogResult.Yes)
+            {
+               */ FormulariosHijos(new Ventas());/*
+            }
+            }
+            else
+            {
+                FormulariosHijos(new Ventas());
+            }
+            
             ///
-
+            */
             OcultarSubMenus();
         }
 
@@ -205,12 +216,20 @@ namespace Presentacion
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
-                PersonalLogic Consulta = new PersonalLogic();
-                var ConsultarLogin = Consulta.SelectEmpleados();
+            try
+            {
+                PersonalLogic Pers = new PersonalLogic();
+                var TraeUsuarios = Pers.SelectEmpleados();
+                dataGridView1.DataSource = TraeUsuarios;
+                //dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[1].HeaderText = "Verga de perro";
 
-                
-                    
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
     }
 }
