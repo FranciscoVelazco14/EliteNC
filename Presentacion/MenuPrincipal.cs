@@ -27,8 +27,28 @@ namespace Presentacion
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
             PersonalLogic Pers = new PersonalLogic();
-           // var TraeUsuarios = Pers.EntrarLogin("Cristian", "C123");
+            // var TraeUsuarios = Pers.EntrarLogin("Cristian", "C123");
             //InformacionUsuario.Text += TraeUsuarios[0].L_Usuario;
+            try
+            {
+                var TraeUsuarios = Pers.SelectEmpleados();
+                dataGridView1.DataSource = TraeUsuarios;
+                //dataGridView1.Columns[0].Visible = false;
+                dataGridView1.Columns[0].HeaderText = "Id";
+                dataGridView1.Columns[1].HeaderText = "Nombre";
+                dataGridView1.Columns[2].HeaderText = "Contraseña";
+                dataGridView1.Columns[3].HeaderText = "Fotografia";
+                dataGridView1.Columns[4].HeaderText = "Telefono";
+                dataGridView1.Columns[5].HeaderText = "Direccion";
+                dataGridView1.Columns[6].HeaderText = "Puesto";
+                dataGridView1.Columns[7].HeaderText = "Correo";
+                dataGridView1.Columns[8].HeaderText = "Fecha";
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
@@ -216,19 +236,7 @@ namespace Presentacion
 
         private void button6_Click(object sender, EventArgs e)
         {
-            try
-            {
-                PersonalLogic Pers = new PersonalLogic();
-                var TraeUsuarios = Pers.SelectEmpleados();
-                dataGridView1.DataSource = TraeUsuarios;
-                //dataGridView1.Columns[0].Visible = false;
-                dataGridView1.Columns[1].HeaderText = "Verga de perro";
-
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
         }
 
     }

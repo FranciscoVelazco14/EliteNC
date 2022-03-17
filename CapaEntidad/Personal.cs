@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace CapaEntidad
     {
         private string Usuario;
         private string Contraseña;
-        private string Imagen;
+        private System.Data.Linq.Binary Imagen;
         private int ID;
         private string Tel;
         private string Direccion;
@@ -35,7 +36,7 @@ namespace CapaEntidad
             set { this.Contraseña = value; }
         }
 
-        public string L_Imagen
+        public System.Data.Linq.Binary L_Imagen
         {
             get { return this.Imagen; }
             set { this.Imagen = value; }

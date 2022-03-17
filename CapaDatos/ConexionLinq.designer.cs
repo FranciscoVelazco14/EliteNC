@@ -36,7 +36,7 @@ namespace CapaDatos
     #endregion
 		
 		public ConexionLinqDataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.ClubConnectionString, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.ClubConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -91,6 +91,13 @@ namespace CapaDatos
 		public int CrearEmpleado([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Foto", DbType="Image")] System.Data.Linq.Binary foto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tel", DbType="VarChar(50)")] string tel, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Direccion", DbType="VarChar(50)")] string direccion, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Puesto", DbType="VarChar(50)")] string puesto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Correo", DbType="VarChar(50)")] string correo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Fecha", DbType="DateTime")] System.Nullable<System.DateTime> fecha)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, contraseña, foto, tel, direccion, puesto, correo, fecha);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearEmpleadoFacil")]
+		public int CrearEmpleadoFacil([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Nombre", DbType="VarChar(50)")] string nombre, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Contraseña", DbType="VarChar(50)")] string contraseña)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, contraseña);
 			return ((int)(result.ReturnValue));
 		}
 	}

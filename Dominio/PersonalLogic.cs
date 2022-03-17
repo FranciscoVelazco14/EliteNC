@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
@@ -45,27 +46,18 @@ namespace Dominio
         }
 
 
-       /* public List<Personal> CrearEmpleado( string Nom, string Con, System.Data.Linq.Binary Foto, string Tel, string Dir, string Puesto, String Corr, DateTime? Fecha)
+        public void CrearEmpleados( string Nom, string Con, System.Data.Linq.Binary Foto, string Tel, string Dir, string Puesto, String Corr, DateTime Fecha)
         {
-            var CrearEmpleados = from E in L_Database.CrearEmpleado(Nom, Con, Foto, Tel, Dir, Puesto, Corr, Fecha)
-                                 select new Personal
-                            {
-                                //L_Usuario = E.Nombre,
-                                //L_Contraseña = E.Contraseña,
-                                // L_Fecha = (DateTime)E.Fecha,
-                               // //L_ID = E.IdEmpleados,
-                                //L_Puesto = E.Puesto,
-                                //L_Imagen = E.Fotografia.ToString(),
-                               // L_Telefono = E.Telefono,
-                                //L_Direccion = E.Direccion,
-                               // L_Correo = E.Correo,
-                               // L_Fecha = DateTime.Now
-
-                            };
-
-            return CrearEmpleados.ToList();
+             L_Database.CrearEmpleado(Nom,Con,Foto,Tel,Dir,Puesto,Corr,Fecha);
+             L_Database.SubmitChanges();
         }
-       */
+
+        public void CrearEmpleadosFacilito()
+        {
+            L_Database.CrearEmpleadoFacil("Pruebas","F123123");
+            L_Database.SubmitChanges();
+        }
+       
     }
 
 }

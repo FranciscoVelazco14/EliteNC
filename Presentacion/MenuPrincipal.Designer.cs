@@ -349,15 +349,15 @@ namespace Presentacion
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 247);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 247);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(546, 178);
+            this.dataGridView1.Size = new System.Drawing.Size(383, 178);
             this.dataGridView1.TabIndex = 2;
             // 
             // ImagenUsuario
             // 
             this.ImagenUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ImagenUsuario.Location = new System.Drawing.Point(426, 46);
+            this.ImagenUsuario.Location = new System.Drawing.Point(426, 34);
             this.ImagenUsuario.Name = "ImagenUsuario";
             this.ImagenUsuario.Size = new System.Drawing.Size(362, 417);
             this.ImagenUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
