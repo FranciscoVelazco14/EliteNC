@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 
 namespace Presentacion
 {
@@ -46,6 +48,22 @@ namespace Presentacion
             
         }
 
+        byte[] ConvertirImagen(Image Imagen)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                Imagen.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
+
+        public Image ConvertirByte(byte[] Datos)
+        {
+            using (MemoryStream ms = new MemoryStream(Datos))
+            {
+                return Image.FromStream(ms);
+            }
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             /*Dominio.PersonalLogic V_PersonalLogic = new Dominio.PersonalLogic();
@@ -66,7 +84,7 @@ namespace Presentacion
                     {
                         if (TxtContraseña.Text == TxtContraseñaConfirmar.Text)
                         {
-                            D.CrearEmpleados(TxtNombre.Text, TxtContraseña.Text, null, TxtTelefono.Text, TxtDireccion.Text, TxtPuesto.Text, TxtCorreo.Text, DateTime.Now);
+                            D.CrearEmpleados(TxtNombre.Text, TxtContraseña.Text,ConvertirImagen(PicFotoEmpleado.Image) , TxtTelefono.Text, TxtDireccion.Text, TxtPuesto.Text, TxtCorreo.Text, DateTime.Now);
                             MessageBox.Show("Si jalo");
                             this.Close();
                             break;
@@ -92,5 +110,14 @@ namespace Presentacion
         {
 
         }
+
+        private void BtnVerUsuarios_Click(object sender, EventArgs e)
+        {
+            
+            VerUsuarios ver = new VerUsuarios();
+            this.Hide();
+            ver.Show();
+        }
+       }
     }
-}
+

@@ -12,7 +12,7 @@ namespace CapaEntidad
     {
         private string Usuario;
         private string Contraseña;
-        private System.Data.Linq.Binary Imagen;
+        private byte[] Imagen;
         private int ID;
         private string Tel;
         private string Direccion;
@@ -36,7 +36,7 @@ namespace CapaEntidad
             set { this.Contraseña = value; }
         }
 
-        public System.Data.Linq.Binary L_Imagen
+        public byte[] L_Imagen
         {
             get { return this.Imagen; }
             set { this.Imagen = value; }

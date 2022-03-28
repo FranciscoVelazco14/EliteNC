@@ -47,6 +47,7 @@ namespace Presentacion
             this.TxtTelefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.TxtCorreo = new System.Windows.Forms.TextBox();
+            this.BtnVerUsuarios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PicFotoEmpleado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,9 +120,9 @@ namespace Presentacion
             // BtnCrearUsuario
             // 
             this.BtnCrearUsuario.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Bold);
-            this.BtnCrearUsuario.Location = new System.Drawing.Point(16, 341);
+            this.BtnCrearUsuario.Location = new System.Drawing.Point(256, 341);
             this.BtnCrearUsuario.Name = "BtnCrearUsuario";
-            this.BtnCrearUsuario.Size = new System.Drawing.Size(489, 34);
+            this.BtnCrearUsuario.Size = new System.Drawing.Size(234, 34);
             this.BtnCrearUsuario.TabIndex = 9;
             this.BtnCrearUsuario.Text = "Crear usuario";
             this.BtnCrearUsuario.UseVisualStyleBackColor = true;
@@ -218,11 +219,23 @@ namespace Presentacion
             this.TxtCorreo.Size = new System.Drawing.Size(235, 29);
             this.TxtCorreo.TabIndex = 7;
             // 
+            // BtnVerUsuarios
+            // 
+            this.BtnVerUsuarios.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Bold);
+            this.BtnVerUsuarios.Location = new System.Drawing.Point(15, 341);
+            this.BtnVerUsuarios.Name = "BtnVerUsuarios";
+            this.BtnVerUsuarios.Size = new System.Drawing.Size(234, 34);
+            this.BtnVerUsuarios.TabIndex = 10;
+            this.BtnVerUsuarios.Text = "Todos los usuarios";
+            this.BtnVerUsuarios.UseVisualStyleBackColor = true;
+            this.BtnVerUsuarios.Click += new System.EventHandler(this.BtnVerUsuarios_Click);
+            // 
             // RegistrarNuevoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 387);
+            this.Controls.Add(this.BtnVerUsuarios);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TxtCorreo);
             this.Controls.Add(this.label1);
@@ -272,5 +285,6 @@ namespace Presentacion
         private System.Windows.Forms.TextBox TxtTelefono;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TxtCorreo;
+        private System.Windows.Forms.Button BtnVerUsuarios;
     }
 }
