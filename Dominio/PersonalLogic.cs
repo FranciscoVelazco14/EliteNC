@@ -21,7 +21,9 @@ namespace Dominio
                            select new Personal
                            {
                                L_Usuario = e.Nombre,
-                               L_Contraseña = e.Contraseña
+                               L_Contraseña = e.Contraseña,
+                               L_Imagen = e.Fotografia.ToArray(),
+                               L_Fecha = (DateTime)e.Fecha
                             };
             return Usuarios.ToList();
         }
@@ -38,10 +40,9 @@ namespace Dominio
                 L_Telefono = E.Telefono,
                 L_Direccion = E.Direccion,
                 L_Correo = E.Correo,
-                L_Fecha = DateTime.Now
+                L_Fecha = (DateTime)E.Fecha
 
             };
-           
             return Empleados.ToList();  
         }
 

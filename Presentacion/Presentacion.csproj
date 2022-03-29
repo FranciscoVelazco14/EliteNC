@@ -143,5 +143,9 @@
   <ItemGroup>
     <Content Include="night-club-_1_.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\CapaDatos.ClubDataSetTableAdapters.EmpleadosTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CapaDatos.SelectEmpleadosResult.datasource" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

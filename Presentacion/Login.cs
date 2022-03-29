@@ -52,6 +52,7 @@ namespace Presentacion
         {
 
         }
+
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             
@@ -62,15 +63,17 @@ namespace Presentacion
                 var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text,txtId);
                 if (TraeUsuarios.Count == 1)
                 { 
-                    MessageBox.Show("Inicio de sesion");
+                    //MessageBox.Show("Inicio de sesion");
                     MenuPrincipal MenuPrincipal_V = new MenuPrincipal();
+                    RegistrarNuevoUsuario RegistrarNuevo_V = new RegistrarNuevoUsuario();
                     MenuPrincipal_V.InformacionUsuario.Text += TraeUsuarios[0].L_Usuario +"\nRegistro: "+TraeUsuarios[0].L_Fecha ;
+                    MenuPrincipal_V.ImagenUsuario.Image =  RegistrarNuevo_V.ConvertirByte(TraeUsuarios[0].L_Imagen);
                     this.Hide();
                     MenuPrincipal_V.Show();
                 }
                 else
                 {
-                    MessageBox.Show("No inicio");
+                    MessageBox.Show("Usuario y/o contraseña incorrectos");
                 }
             }
             catch
