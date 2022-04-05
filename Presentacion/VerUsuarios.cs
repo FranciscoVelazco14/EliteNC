@@ -26,10 +26,7 @@ namespace Presentacion
 
         private void VerUsuarios_Load(object sender, EventArgs e)
         {
-
-
             PersonalLogic Pers = new PersonalLogic();
-
             var TraeUsuarios = Pers.SelectEmpleados();
             dataGridView1.DataSource = TraeUsuarios;
             //dataGridView1.Columns[0].Visible = false;
@@ -43,34 +40,35 @@ namespace Presentacion
             dataGridView1.Columns[7].HeaderText = "Correo";
             dataGridView1.Columns[8].HeaderText = "Fecha";
 
-
-            Dominio.PersonalLogic D = new Dominio.PersonalLogic();
-            RegistrarNuevoUsuario regs = new RegistrarNuevoUsuario();
-            var traerEmpleados = D.SelectEmpleados();
-
-            foreach (var elemento in traerEmpleados)
-            {
-                comboBox1.Items.Add(elemento.L_Usuario);
-            }
-            //comboBox1.Items.Add(traerEmpleados[1].L_Usuario);
-            
-            switch (comboBox1.SelectedIndex)
-            {
-                case  1:
-                    MessageBox.Show("Sasd");
-                    
-                    break;
-
-            }
-            var b = dataGridView1.SelectedRows;
-            MessageBox.Show(b.ToString());
-           // pictureBox1.Image = regs.ConvertirByte(traerEmpleados[2].L_Imagen);
+            dataGridView1.Columns[2].Visible = false;
+            dataGridView1.Columns[3].Visible = false;
         }
 
         private void VerUsuarios_FormClosing(object sender, FormClosingEventArgs e)
         {
             RegistrarNuevoUsuario regs = new RegistrarNuevoUsuario();
             regs.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Dominio.PersonalLogic D = new Dominio.PersonalLogic();
+            RegistrarNuevoUsuario regs = new RegistrarNuevoUsuario();
+            var traerEmpleados = D.SelectEmpleados();
+            pictureBox1.Image = regs.ConvertirByte(traerEmpleados[dataGridView1.CurrentRow.Index].L_Imagen);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
