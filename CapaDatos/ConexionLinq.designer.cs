@@ -100,6 +100,27 @@ namespace CapaDatos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nombre, contraseña);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TraeFrases")]
+		public ISingleResult<TraeFrasesResult> TraeFrases()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<TraeFrasesResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearArticulo")]
+		public int CrearArticulo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Articulo", DbType="VarChar(50)")] string v_Articulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Precio", DbType="Int")] System.Nullable<int> v_Precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Impuesto", DbType="Int")] System.Nullable<int> v_Impuesto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Medida", DbType="VarChar(50)")] string v_Medida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_ClaveSAT", DbType="VarChar(50)")] string v_ClaveSAT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Almacenable", DbType="VarChar(50)")] string v_Almacenable, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Servicio", DbType="VarChar(50)")] string v_Servicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Imagen", DbType="Image")] System.Data.Linq.Binary v_Imagen)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), v_Articulo, v_Precio, v_Impuesto, v_Medida, v_ClaveSAT, v_Almacenable, v_Servicio, v_Imagen);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.TraerArticulos")]
+		public ISingleResult<TraerArticulosResult> TraerArticulos([global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Articulo", DbType="VarChar(50)")] string v_Articulo)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), v_Articulo);
+			return ((ISingleResult<TraerArticulosResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Empleados")]
@@ -691,6 +712,220 @@ namespace CapaDatos
 				if ((this._Fecha != value))
 				{
 					this._Fecha = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TraeFrasesResult
+	{
+		
+		private string _Frase;
+		
+		private string _Autor;
+		
+		public TraeFrasesResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Frase", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Frase
+		{
+			get
+			{
+				return this._Frase;
+			}
+			set
+			{
+				if ((this._Frase != value))
+				{
+					this._Frase = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Autor", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Autor
+		{
+			get
+			{
+				return this._Autor;
+			}
+			set
+			{
+				if ((this._Autor != value))
+				{
+					this._Autor = value;
+				}
+			}
+		}
+	}
+	
+	public partial class TraerArticulosResult
+	{
+		
+		private int _id_Articulo;
+		
+		private string _Articulo;
+		
+		private int _Precio;
+		
+		private int _Impuesto;
+		
+		private string _Medida;
+		
+		private string _ClaveSAT;
+		
+		private string _Almacenable;
+		
+		private string _Servicio;
+		
+		private System.Data.Linq.Binary _Imagen;
+		
+		public TraerArticulosResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_Articulo", DbType="Int NOT NULL")]
+		public int id_Articulo
+		{
+			get
+			{
+				return this._id_Articulo;
+			}
+			set
+			{
+				if ((this._id_Articulo != value))
+				{
+					this._id_Articulo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Articulo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Articulo
+		{
+			get
+			{
+				return this._Articulo;
+			}
+			set
+			{
+				if ((this._Articulo != value))
+				{
+					this._Articulo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Precio", DbType="Int NOT NULL")]
+		public int Precio
+		{
+			get
+			{
+				return this._Precio;
+			}
+			set
+			{
+				if ((this._Precio != value))
+				{
+					this._Precio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Impuesto", DbType="Int NOT NULL")]
+		public int Impuesto
+		{
+			get
+			{
+				return this._Impuesto;
+			}
+			set
+			{
+				if ((this._Impuesto != value))
+				{
+					this._Impuesto = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Medida", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Medida
+		{
+			get
+			{
+				return this._Medida;
+			}
+			set
+			{
+				if ((this._Medida != value))
+				{
+					this._Medida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClaveSAT", DbType="VarChar(50)")]
+		public string ClaveSAT
+		{
+			get
+			{
+				return this._ClaveSAT;
+			}
+			set
+			{
+				if ((this._ClaveSAT != value))
+				{
+					this._ClaveSAT = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Almacenable", DbType="VarChar(50)")]
+		public string Almacenable
+		{
+			get
+			{
+				return this._Almacenable;
+			}
+			set
+			{
+				if ((this._Almacenable != value))
+				{
+					this._Almacenable = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Servicio", DbType="VarChar(50)")]
+		public string Servicio
+		{
+			get
+			{
+				return this._Servicio;
+			}
+			set
+			{
+				if ((this._Servicio != value))
+				{
+					this._Servicio = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Imagen", DbType="Image")]
+		public System.Data.Linq.Binary Imagen
+		{
+			get
+			{
+				return this._Imagen;
+			}
+			set
+			{
+				if ((this._Imagen != value))
+				{
+					this._Imagen = value;
 				}
 			}
 		}

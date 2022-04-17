@@ -19,6 +19,8 @@ namespace CapaEntidad
         private string Puesto;
         private string Correo;
         private DateTime Fecha;
+        private string Frase;
+        private string Autor;
 
         public int L_ID
         {
@@ -67,8 +69,17 @@ namespace CapaEntidad
             get { return this.Fecha; }
             set { this.Fecha = value; }
         }
-        
-        
+
+        public string L_Frase
+        {
+            get { return this.Frase; }
+            set { this.Frase = value; }
+        }
+        public string L_Autor
+        {
+            get { return this.Autor; }
+            set { this.Autor = value; }
+        }
     }
 
 

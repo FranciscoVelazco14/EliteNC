@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dominio;
 
 namespace Presentacion
 {
@@ -19,7 +20,7 @@ namespace Presentacion
 
         private void Ventas_Load(object sender, EventArgs e)
         {
-
+            CargarInfo();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,6 +36,28 @@ namespace Presentacion
 
         private void button3_Click(object sender, EventArgs e)
         {
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            CargarInfo();
+        }
+
+        public void CargarInfo()
+        {
+
+            PersonalLogic pers = new PersonalLogic();
+            DataTable tabla = new DataTable();
+            dataGridView1.DataSource = pers.TraerArticulos(textBox1.Text);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            Dominio.PersonalLogic D = new Dominio.PersonalLogic();
+            RegistrarNuevoUsuario regs = new RegistrarNuevoUsuario();
+            var traerEmpleados = D.TraerArticulos(textBox1.Text);
+            pictureBox1.Image = regs.ConvertirByte(traerEmpleados[dataGridView1.CurrentRow.Index].Imagen1);
         }
     }
 }

@@ -23,7 +23,9 @@ namespace Dominio
                                L_Usuario = e.Nombre,
                                L_Contraseña = e.Contraseña,
                                L_Imagen = e.Fotografia.ToArray(),
-                               L_Fecha = (DateTime)e.Fecha
+                               L_Fecha = (DateTime)e.Fecha,
+                               L_Puesto = e.Puesto
+                               
                             };
             return Usuarios.ToList();
         }
@@ -53,12 +55,40 @@ namespace Dominio
              L_Database.SubmitChanges();
         }
 
-        public void CrearEmpleadosFacilito()
+       
+        public List<Personal> TraerFrases()
         {
-            L_Database.CrearEmpleadoFacil("Pruebas","F123123");
+            var Consulta = from e in L_Database.TraeFrases()
+                           select new Personal
+                           {
+                               L_Frase = e.Frase,
+                               L_Autor = e.Autor
+                           };
+                            
+            return Consulta.ToList();
+        }
+
+        public List<Articulos> TraerArticulos(string V_Articulo)
+        {
+            var Consulta = from e in L_Database.TraerArticulos(V_Articulo)
+                           select new Articulos
+                           {
+                               NombreArticulo1 = e.Articulo,
+                               Precio1 = e.Precio.ToString(),
+                               Medida1 = e.Medida,
+                               ClaveSat1 = e.ClaveSAT,
+                               Imagen1 = e.Imagen.ToArray()
+                               
+                           };
+
+            return Consulta.ToList();
+        }
+        public void CrearArticulos(string Art, int Pre,int imp, string med ,string claSAT,string alm,string ser, byte[] Foto)
+        {
+            L_Database.CrearArticulo(Art, Pre,imp , med, claSAT, alm, ser, Foto);
             L_Database.SubmitChanges();
         }
-       
+
     }
 
 }

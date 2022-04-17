@@ -27,7 +27,7 @@ namespace Presentacion
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
 
-
+            CargarFrase();
             // var TraeUsuarios = Pers.EntrarLogin("Cristian", "C123");
             //InformacionUsuario.Text += TraeUsuarios[0].L_Usuario;
             try
@@ -36,7 +36,7 @@ namespace Presentacion
                 PersonalLogic Pers = new PersonalLogic();
 
                 var TraeUsuarios = Pers.SelectEmpleados();
-                dataGridView1.DataSource = TraeUsuarios;
+                /*dataGridView1.DataSource = TraeUsuarios;
                 //dataGridView1.Columns[0].Visible = false;
                  dataGridView1.Columns[0].HeaderText = "Id";
                  dataGridView1.Columns[1].HeaderText = "Nombre";
@@ -46,7 +46,7 @@ namespace Presentacion
                  dataGridView1.Columns[5].HeaderText = "Direccion";
                  dataGridView1.Columns[6].HeaderText = "Puesto";
                  dataGridView1.Columns[7].HeaderText = "Correo";
-                 dataGridView1.Columns[8].HeaderText = "Fecha";
+                 dataGridView1.Columns[8].HeaderText = "Fecha";*/
 
 
             }
@@ -118,21 +118,8 @@ namespace Presentacion
 
         private void button11_Click(object sender, EventArgs e)
         {
-            /*if (PanelFormularios.Controls.Count == FormularioActivo.Controls.Count)
-            {
-            DialogResult Ventas = MessageBox.Show("¿Estas seguro de abrir modulo de ventas?\nSe perdera el actual", "Ventas", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-            if (Ventas == DialogResult.Yes)
-            {
-               */ FormulariosHijos(new Ventas());/*
-            }
-            }
-            else
-            {
-                FormulariosHijos(new Ventas());
-            }
+            FormulariosHijos(new Ventas());
             
-            ///
-            */
             OcultarSubMenus();
         }
 
@@ -150,7 +137,7 @@ namespace Presentacion
 
         private void button16_Click(object sender, EventArgs e)
         {
-
+            FormulariosHijos(new AgregarArticulos());
             OcultarSubMenus();
         }
 
@@ -246,6 +233,20 @@ namespace Presentacion
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        PersonalLogic Pers = new PersonalLogic();
+        Random rnd = new Random();
+
+        private void CargarFrase()
+        {
+            var TraeFrase = Pers.TraerFrases();
+            var FraseRandom = rnd.Next(0, 85);
+            Frase.Text = '"' + TraeFrase[FraseRandom].L_Frase + '"' + "\r\n" + TraeFrase[FraseRandom].L_Autor;
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CargarFrase();
         }
     }
 }
