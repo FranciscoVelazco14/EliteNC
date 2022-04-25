@@ -27,7 +27,7 @@ namespace Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             PersonalLogic pers = new PersonalLogic();
-            pers.CrearArticulos(textBox1.Text,numericUpDown1.DecimalPlaces,numericUpDown2.DecimalPlaces,textBox4.Text,textBox5.Text,"Si","No",ConvertirImagen(pictureBox1.Image));
+            pers.CrearArticulos(textBox1.Text,numericUpDown1.Value,numericUpDown2.Value,textBox4.Text,textBox5.Text,"Si","No",ConvertirImagen(pictureBox1.Image));
         }
         byte[] ConvertirImagen(Image Imagen)
         {

@@ -109,7 +109,7 @@ namespace CapaDatos
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.CrearArticulo")]
-		public int CrearArticulo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Articulo", DbType="VarChar(50)")] string v_Articulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Precio", DbType="Int")] System.Nullable<int> v_Precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Impuesto", DbType="Int")] System.Nullable<int> v_Impuesto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Medida", DbType="VarChar(50)")] string v_Medida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_ClaveSAT", DbType="VarChar(50)")] string v_ClaveSAT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Almacenable", DbType="VarChar(50)")] string v_Almacenable, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Servicio", DbType="VarChar(50)")] string v_Servicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Imagen", DbType="Image")] System.Data.Linq.Binary v_Imagen)
+		public int CrearArticulo([global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Articulo", DbType="VarChar(50)")] string v_Articulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Precio", DbType="Decimal(18,2)")] System.Nullable<decimal> v_Precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Impuesto", DbType="Decimal(18,2)")] System.Nullable<decimal> v_Impuesto, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Medida", DbType="VarChar(50)")] string v_Medida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_ClaveSAT", DbType="VarChar(50)")] string v_ClaveSAT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Almacenable", DbType="VarChar(50)")] string v_Almacenable, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Servicio", DbType="VarChar(50)")] string v_Servicio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="V_Imagen", DbType="Image")] System.Data.Linq.Binary v_Imagen)
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), v_Articulo, v_Precio, v_Impuesto, v_Medida, v_ClaveSAT, v_Almacenable, v_Servicio, v_Imagen);
 			return ((int)(result.ReturnValue));
@@ -768,9 +768,9 @@ namespace CapaDatos
 		
 		private string _Articulo;
 		
-		private int _Precio;
+		private decimal _Precio;
 		
-		private int _Impuesto;
+		private decimal _Impuesto;
 		
 		private string _Medida;
 		
@@ -818,8 +818,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Precio", DbType="Int NOT NULL")]
-		public int Precio
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Precio", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Precio
 		{
 			get
 			{
@@ -834,8 +834,8 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Impuesto", DbType="Int NOT NULL")]
-		public int Impuesto
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Impuesto", DbType="Decimal(18,2) NOT NULL")]
+		public decimal Impuesto
 		{
 			get
 			{

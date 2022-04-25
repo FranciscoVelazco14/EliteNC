@@ -66,8 +66,8 @@
   </Function>
   <Function Name="dbo.CrearArticulo" Method="CrearArticulo">
     <Parameter Name="V_Articulo" Parameter="v_Articulo" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="V_Precio" Parameter="v_Precio" Type="System.Int32" DbType="Int" />
-    <Parameter Name="V_Impuesto" Parameter="v_Impuesto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="V_Precio" Parameter="v_Precio" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="V_Impuesto" Parameter="v_Impuesto" Type="System.Decimal" DbType="Decimal(18,2)" />
     <Parameter Name="V_Medida" Parameter="v_Medida" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="V_ClaveSAT" Parameter="v_ClaveSAT" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="V_Almacenable" Parameter="v_Almacenable" Type="System.String" DbType="VarChar(50)" />
@@ -80,8 +80,8 @@
     <ElementType Name="TraerArticulosResult">
       <Column Name="id_Articulo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Articulo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Precio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="Impuesto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Impuesto" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
       <Column Name="Medida" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ClaveSAT" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Almacenable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
