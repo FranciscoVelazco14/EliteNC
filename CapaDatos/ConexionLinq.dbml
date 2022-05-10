@@ -73,6 +73,7 @@
     <Parameter Name="V_Almacenable" Parameter="v_Almacenable" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="V_Servicio" Parameter="v_Servicio" Type="System.String" DbType="VarChar(50)" />
     <Parameter Name="V_Imagen" Parameter="v_Imagen" Type="System.Data.Linq.Binary" DbType="Image" />
+    <Parameter Name="V_Cantidad" Parameter="v_Cantidad" Type="System.Decimal" DbType="Decimal(18,2)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="dbo.TraerArticulos" Method="TraerArticulos">
@@ -87,6 +88,7 @@
       <Column Name="Almacenable" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Servicio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Imagen" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

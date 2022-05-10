@@ -61,11 +61,26 @@ namespace Presentacion
             RegistrarNuevoUsuario regs = new RegistrarNuevoUsuario();
             var traerEmpleados = D.TraerArticulos(textBox1.Text);
             pictureBox1.Image = regs.ConvertirByte(traerEmpleados[dataGridView1.CurrentRow.Index].Imagen1);
+            label3.Text = dataGridView1.CurrentRow.Cells["Cantidad1"].Value.ToString();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+           if (Convert.ToInt32(label3.Text) > Convert.ToInt32(txtCantidad.Text))
+            {
+                MessageBox.Show("No hay tantos");
+            }
+            
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

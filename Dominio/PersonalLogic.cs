@@ -77,15 +77,16 @@ namespace Dominio
                                Precio1 = e.Precio.ToString(),
                                Medida1 = e.Medida,
                                ClaveSat1 = e.ClaveSAT,
-                               Imagen1 = e.Imagen.ToArray()
+                               Imagen1 = e.Imagen.ToArray(),
+                               Cantidad1 = e.Cantidad.ToString()
                                
                            };
 
             return Consulta.ToList();
         }
-        public void CrearArticulos(string Art, decimal Pre,decimal imp, string med ,string claSAT,string alm,string ser, byte[] Foto)
+        public void CrearArticulos(string Art, decimal Pre,decimal imp, string med ,string claSAT,string alm,string ser, byte[] Foto,decimal cant)
         {
-            L_Database.CrearArticulo(Art, Pre,imp , med, claSAT, alm, ser, Foto);
+            L_Database.CrearArticulo(Art, Pre,imp , med, claSAT, alm, ser, Foto,cant);
             L_Database.SubmitChanges();
         }
 
