@@ -73,7 +73,7 @@ namespace Presentacion
         {
            if (Convert.ToInt32(label3.Text) > Convert.ToInt32(txtCantidad.Text))
             {
-                MessageBox.Show("Prueba de GIT");
+                MessageBox.Show("Prueba de GIT 2");
             }
             
         }
