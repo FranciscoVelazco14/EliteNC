@@ -36,7 +36,7 @@ namespace CapaDatos
     #endregion
 		
 		public ConexionLinqDataContext() : 
-				base(global::CapaDatos.Properties.Settings.Default.ClubConnectionString3, mappingSource)
+				base(global::CapaDatos.Properties.Settings.Default.ClubConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}

@@ -25,8 +25,7 @@ namespace Presentacion
         {
             var traerEmpleados = D.TraerArticulos(textBox1.Text);
             CargarInfo();
-            dataGridView2.AutoResizeColumns();
-            dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            
             pictureBox1.Image = regs.ConvertirByte(traerEmpleados[dataGridView1.CurrentRow.Index].Imagen1);
         }
 
