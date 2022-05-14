@@ -62,5 +62,16 @@ namespace CapaDatos.Properties {
                 return ((string)(this["ClubConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-SK3KU5L\\SQLEXPRESS;Initial Catalog=Club;Integrated Security=T" +
+            "rue")]
+        public string ClubConnectionString3 {
+            get {
+                return ((string)(this["ClubConnectionString3"]));
+            }
+        }
     }
 }

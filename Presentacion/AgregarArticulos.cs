@@ -26,9 +26,20 @@ namespace Presentacion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PersonalLogic pers = new PersonalLogic();
-            pers.CrearArticulos(textBox1.Text,numericUpDown1.Value,numericUpDown2.Value,textBox4.Text,textBox5.Text,"Si","No",ConvertirImagen(pictureBox1.Image),numericUpDown3.Value);
+                PersonalLogic pers = new PersonalLogic();
+            if (pictureBox1.Image != null && textBox1.Text != "" && textBox4.Text != "")
+            {
+                MessageBox.Show("Si entro");
+                pers.CrearArticulos(textBox1.Text, numericUpDown1.Value, numericUpDown2.Value, textBox4.Text, textBox5.Text, "Si", "No", ConvertirImagen(pictureBox1.Image), numericUpDown3.Value);
+
+            }
+            else
+            {
+                MessageBox.Show("Te falto un campo obligtorio", "SISTEMA");
+                MessageBox.Show((pictureBox1.Image != null).ToString());
+            }            
         }
+        
         byte[] ConvertirImagen(Image Imagen)
         {
             using (MemoryStream ms = new MemoryStream())
