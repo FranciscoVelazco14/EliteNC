@@ -16,7 +16,10 @@ namespace Presentacion
         public Ventas()
         {
             InitializeComponent();
-            
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
         }
         Dominio.PersonalLogic D = new Dominio.PersonalLogic();
         RegistrarNuevoUsuario regs = new RegistrarNuevoUsuario();

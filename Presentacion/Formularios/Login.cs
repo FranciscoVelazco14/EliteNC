@@ -35,7 +35,7 @@ namespace Presentacion
 
         private void txtContraseña_Enter(object sender, EventArgs e)
         {
-            if (txtContraseña.Text=="Contraseña")
+            if (txtContraseña.Text == "Contraseña")
             {
                 txtContraseña.Text = "";
                 txtContraseña.ForeColor = Color.FromArgb(0, 120, 204);
@@ -43,34 +43,26 @@ namespace Presentacion
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        #region "Botones de ingresar, de registro y salida"
+        //Boton Ingresar
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 PersonalLogic Pers = new PersonalLogic();
                 int.TryParse(txtUsuario.Text, out int txtId);
-                var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text,txtId);
+                var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text, txtId);
                 if (TraeUsuarios.Count == 1)
-                { 
+                {
                     //MessageBox.Show("Inicio de sesion");
                     MenuPrincipal MenuPrincipal_V = new MenuPrincipal();
                     RegistrarNuevoUsuario RegistrarNuevo_V = new RegistrarNuevoUsuario();
                     MenuPrincipal_V.InformacionUsuario.Text += TraeUsuarios[0].L_Usuario;
                     MenuPrincipal_V.Puesto.Text = TraeUsuarios[0].L_Puesto;
-                    
 
-                    MenuPrincipal_V.ImagenUsuario.Image =  RegistrarNuevo_V.ConvertirByte(TraeUsuarios[0].L_Imagen);
+
+                    MenuPrincipal_V.ImagenUsuario.Image = RegistrarNuevo_V.ConvertirByte(TraeUsuarios[0].L_Imagen);
                     this.Hide();
                     MenuPrincipal_V.Show();
                 }
@@ -85,39 +77,47 @@ namespace Presentacion
             }
 
         }
-
+        //Boton Registrar
         private void btnRegistrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            try
-            {
-                PersonalLogic Pers = new PersonalLogic();
-                int.TryParse(txtUsuario.Text, out int txtId);
-                var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text,txtId);
-
-                foreach (var Elemento in TraeUsuarios)
+                try
                 {
-                    if (Elemento.L_Usuario == "Francisco" && Elemento.L_Contraseña == "F123")
+                    PersonalLogic Pers = new PersonalLogic();
+                    int.TryParse(txtUsuario.Text, out int txtId);
+                    var TraeUsuarios = Pers.EntrarLogin(txtUsuario.Text, txtContraseña.Text, txtId);
+
+                    foreach (var Elemento in TraeUsuarios)
                     {
-                        MessageBox.Show("Bienvenido usuario administrador");
-                        RegistrarNuevoUsuario registrarNuevoUsuario_V = new RegistrarNuevoUsuario();
-                        registrarNuevoUsuario_V.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ingresa el usuario administrador");
+                        if (Elemento.L_Usuario == "Francisco" && Elemento.L_Contraseña == "F123")
+                        {
+                            MessageBox.Show("Bienvenido usuario administrador");
+                            RegistrarNuevoUsuario registrarNuevoUsuario_V = new RegistrarNuevoUsuario();
+                            registrarNuevoUsuario_V.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingresa el usuario administrador");
+                        }
                     }
                 }
-            }
-            catch
-            {
-
-            }
+                catch
+                {
+                   
+                }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        #endregion
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                btnIngresar.PerformClick();
+            }
         }
     }
 }

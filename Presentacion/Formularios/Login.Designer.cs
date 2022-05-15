@@ -64,11 +64,11 @@ namespace Presentacion
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsuario.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
             this.txtUsuario.Location = new System.Drawing.Point(292, 125);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(337, 33);
+            this.txtUsuario.Size = new System.Drawing.Size(337, 29);
             this.txtUsuario.TabIndex = 3;
             this.txtUsuario.Text = "Usuario/Id";
             this.txtUsuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -78,22 +78,23 @@ namespace Presentacion
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtContraseña.Font = new System.Drawing.Font("Arial Unicode MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.ForeColor = System.Drawing.Color.DimGray;
             this.txtContraseña.Location = new System.Drawing.Point(292, 181);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(337, 33);
+            this.txtContraseña.Size = new System.Drawing.Size(337, 29);
             this.txtContraseña.TabIndex = 4;
             this.txtContraseña.Text = "Contraseña";
             this.txtContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(204)))));
             this.btnIngresar.FlatAppearance.BorderSize = 0;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Arial Unicode MS", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIngresar.Location = new System.Drawing.Point(292, 247);
             this.btnIngresar.Name = "btnIngresar";
@@ -107,11 +108,11 @@ namespace Presentacion
             // 
             this.btnRegistrar.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(204)))));
             this.btnRegistrar.AutoSize = true;
-            this.btnRegistrar.Font = new System.Drawing.Font("Arial Unicode MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.LinkColor = System.Drawing.SystemColors.ControlDark;
             this.btnRegistrar.Location = new System.Drawing.Point(378, 300);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(160, 18);
+            this.btnRegistrar.Size = new System.Drawing.Size(164, 16);
             this.btnRegistrar.TabIndex = 6;
             this.btnRegistrar.TabStop = true;
             this.btnRegistrar.Text = "¿Registrar nuevo usuario?";
@@ -121,11 +122,11 @@ namespace Presentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Unicode MS", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Location = new System.Drawing.Point(419, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 33);
+            this.label1.Size = new System.Drawing.Size(87, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "LOGIN";
             // 
@@ -162,7 +163,6 @@ namespace Presentacion
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
