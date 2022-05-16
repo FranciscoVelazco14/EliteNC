@@ -28,7 +28,6 @@ namespace Presentacion
         {
             var traerEmpleados = D.TraerArticulos(textBox1.Text);
             CargarInfo();
-            
             pictureBox1.Image = regs.ConvertirByte(traerEmpleados[dataGridView1.CurrentRow.Index].Imagen1);
         }
 
@@ -54,9 +53,7 @@ namespace Presentacion
 
         public void CargarInfo()
         {
-
             PersonalLogic pers = new PersonalLogic();
-            DataTable tabla = new DataTable();
             dataGridView1.DataSource = pers.TraerArticulos(textBox1.Text);
             dataGridView1.Columns[0].HeaderText = "Nombre del articulo";
             dataGridView1.Columns[1].HeaderText = "Precio";
@@ -106,6 +103,11 @@ namespace Presentacion
         private void label3_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
