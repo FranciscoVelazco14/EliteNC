@@ -61,11 +61,6 @@ namespace Presentacion
             Login Login_V = new Login();
             Login_V.Show();
         }
-
-
-
-
-
         private void PanelMenuLateralIzquierdo_Paint(object sender, PaintEventArgs e)
         {
 
@@ -82,7 +77,7 @@ namespace Presentacion
             PanelInventario.Visible = false;
             PanelConfiguracion.Visible = false;
         }
-        private void OcultarSubMenus()
+        public void OcultarSubMenus()
         {
             if (PanelVentas.Visible == true)
             {

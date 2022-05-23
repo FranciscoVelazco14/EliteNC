@@ -55,6 +55,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\EditarArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\EditarArticulos.Designer.cs">
+      <DependentUpon>EditarArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\AgregarArticulos.cs">
       <SubType>Form</SubType>
     </Compile>

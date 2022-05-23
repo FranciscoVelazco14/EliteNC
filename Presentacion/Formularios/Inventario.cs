@@ -44,5 +44,10 @@ namespace Presentacion
         {
             cargarinfo();
         }
+        private void btneditar_Click(object sender, EventArgs e)
+        {
+            EditarArticulos et = new EditarArticulos();
+            et.Show();
+        }
     }
 }

@@ -23,7 +23,6 @@ namespace Presentacion
         }
         Dominio.PersonalLogic D = new Dominio.PersonalLogic();
         RegistrarNuevoUsuario regs = new RegistrarNuevoUsuario();
-      
         private void Ventas_Load(object sender, EventArgs e)
         {
             var traerEmpleados = D.TraerArticulos(textBox1.Text);
