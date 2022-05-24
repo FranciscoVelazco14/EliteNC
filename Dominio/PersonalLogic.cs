@@ -73,6 +73,7 @@ namespace Dominio
             var Consulta = from e in L_Database.TraerArticulos(V_Articulo)
                            select new Articulos
                            {
+                               Id1 = e.id_Articulo,
                                NombreArticulo1 = e.Articulo,
                                Precio1 = e.Precio.ToString(),
                                Medida1 = e.Medida,
@@ -87,6 +88,11 @@ namespace Dominio
         public void CrearArticulos(string Art, decimal Pre,decimal imp, string med ,string claSAT,string alm,string ser, byte[] Foto,decimal cant)
         {
             L_Database.CrearArticulo(Art, Pre,imp , med, claSAT, alm, ser, Foto,cant);
+            L_Database.SubmitChanges();
+        }
+        public void Edita_articulos(int id,string art,decimal Pre,string med,string claSAT,decimal cant)
+        {
+            L_Database.Edita_articulos(id, art, Pre, med, claSAT, cant);
             L_Database.SubmitChanges();
         }
 

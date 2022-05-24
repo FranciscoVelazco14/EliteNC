@@ -91,4 +91,13 @@
       <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
+  <Function Name="dbo.Edita_articulos" Method="Edita_articulos">
+    <Parameter Name="id_Articulo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Articulo" Parameter="articulo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Precio" Parameter="precio" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Medida" Parameter="medida" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ClaveSAT" Parameter="claveSAT" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

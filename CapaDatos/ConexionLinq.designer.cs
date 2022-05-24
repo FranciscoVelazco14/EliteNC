@@ -121,6 +121,13 @@ namespace CapaDatos
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), v_Articulo);
 			return ((ISingleResult<TraerArticulosResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.Edita_articulos")]
+		public int Edita_articulos([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> id_Articulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Articulo", DbType="VarChar(50)")] string articulo, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Precio", DbType="Decimal(18,2)")] System.Nullable<decimal> precio, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Medida", DbType="VarChar(50)")] string medida, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ClaveSAT", DbType="VarChar(50)")] string claveSAT, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Cantidad", DbType="Decimal(18,2)")] System.Nullable<decimal> cantidad)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id_Articulo, articulo, precio, medida, claveSAT, cantidad);
+			return ((int)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Empleados")]

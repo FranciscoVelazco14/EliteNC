@@ -28,6 +28,14 @@ namespace Presentacion
             var traerEmpleados = D.TraerArticulos(textBox1.Text);
             CargarInfo();
             pictureBox1.Image = regs.ConvertirByte(traerEmpleados[dataGridView1.CurrentRow.Index].Imagen1);
+            label3.Text = dataGridView1.CurrentRow.Cells["Cantidad1"].Value.ToString();
+            dataGridView1.Columns[0].HeaderText = "Nombre del articulo";
+            dataGridView1.Columns[1].HeaderText = "Precio";
+            dataGridView1.Columns[2].HeaderText = "Medida";
+            dataGridView1.Columns[3].HeaderText = "Clave SAT";
+            dataGridView1.Columns[4].HeaderText = "Imagen Articulo";
+            dataGridView1.Columns[5].HeaderText = "Cantidad";
+            dataGridView1.Columns[6].HeaderText = "Id Articulo";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -85,7 +93,7 @@ namespace Presentacion
                     string prec = dataGridView1.CurrentRow.Cells["Precio1"].Value.ToString();
                     string med = dataGridView1.CurrentRow.Cells["Medida1"].Value.ToString();
                     string ClavSat = dataGridView1.CurrentRow.Cells["ClaveSat1"].Value.ToString();
-                    string cant = dataGridView1.CurrentRow.Cells["Cantidad1"].Value.ToString();
+                    string cant = txtCantidad.Text;
                     dataGridView2.Rows.Add(new[] { nom, prec, med, ClavSat, cant });
 
                 }
@@ -105,6 +113,11 @@ namespace Presentacion
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

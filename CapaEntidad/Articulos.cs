@@ -14,6 +14,7 @@ namespace CapaEntidad
         private string ClaveSat;
         private byte[] Imagen;
         private string Cantidad;
+        private int Id;
 
         public string NombreArticulo1 { get => NombreArticulo; set => NombreArticulo = value; }
         public string Precio1 { get => Precio; set => Precio = value; }
@@ -21,5 +22,6 @@ namespace CapaEntidad
         public string ClaveSat1 { get => ClaveSat; set => ClaveSat = value; }
         public byte[] Imagen1 { get => Imagen; set => Imagen = value; }
         public string Cantidad1 { get => Cantidad; set => Cantidad = value; }
+        public int Id1 { get => Id; set => Id = value; }
     }
 }

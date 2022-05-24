@@ -121,6 +121,9 @@
     <EmbeddedResource Include="Formularios\AgregarArticulos.resx">
       <DependentUpon>AgregarArticulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\EditarArticulos.resx">
+      <DependentUpon>EditarArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

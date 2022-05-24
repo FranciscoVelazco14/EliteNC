@@ -271,6 +271,7 @@ namespace Presentacion
             this.PanelFormularios.Name = "PanelFormularios";
             this.PanelFormularios.Size = new System.Drawing.Size(939, 615);
             this.PanelFormularios.TabIndex = 4;
+            this.PanelFormularios.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelFormularios_Paint);
             // 
             // panel1
             // 

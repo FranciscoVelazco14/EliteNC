@@ -243,5 +243,10 @@ namespace Presentacion
         {
             CargarFrase();
         }
+
+        private void PanelFormularios_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
