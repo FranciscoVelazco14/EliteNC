@@ -229,6 +229,7 @@ namespace Presentacion
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(816, 417);
             this.Name = "EditarArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarArticulos";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
