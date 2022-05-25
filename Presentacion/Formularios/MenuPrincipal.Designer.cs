@@ -333,7 +333,7 @@ namespace Presentacion
             this.Puesto.AutoSize = true;
             this.Puesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold);
             this.Puesto.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Puesto.Location = new System.Drawing.Point(22, 16);
+            this.Puesto.Location = new System.Drawing.Point(28, 16);
             this.Puesto.Name = "Puesto";
             this.Puesto.Size = new System.Drawing.Size(74, 24);
             this.Puesto.TabIndex = 4;
@@ -428,7 +428,6 @@ namespace Presentacion
         }
 
         #endregion
-        private System.Windows.Forms.Panel PanelMenuLateralIzquierdo;
         private System.Windows.Forms.Button ModuloVentas;
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.Panel PanelVentas;
@@ -439,17 +438,18 @@ namespace Presentacion
         private System.Windows.Forms.Button button16;
         private System.Windows.Forms.Panel PanelFormularios;
         private System.Windows.Forms.Panel PanelLogoE;
-        private System.Windows.Forms.Panel PanelInformacion;
         public System.Windows.Forms.Label InformacionUsuario;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel PanelConfiguracion;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button Configuracion;
         public System.Windows.Forms.PictureBox ImagenUsuario;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label Frase;
         public System.Windows.Forms.Label Puesto;
+        public System.Windows.Forms.Panel PanelMenuLateralIzquierdo;
+        public System.Windows.Forms.Panel PanelInformacion;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button button5;
+        public System.Windows.Forms.Button button6;
     }
 }

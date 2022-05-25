@@ -34,6 +34,8 @@ namespace Presentacion
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            Inventario inv = new Inventario();
+            inv.Refresh();
             this.Close();
         }
     }

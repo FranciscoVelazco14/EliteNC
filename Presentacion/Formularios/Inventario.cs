@@ -18,7 +18,7 @@ namespace Presentacion
         }
         Dominio.PersonalLogic D = new Dominio.PersonalLogic();
         RegistrarNuevoUsuario regs = new RegistrarNuevoUsuario();
-
+        PersonalLogic pers = new PersonalLogic();
         private void Inventario_Load(object sender, EventArgs e)
         {
             cargarinfo();
@@ -40,7 +40,7 @@ namespace Presentacion
         }
         private void cargarinfo()
         {
-            PersonalLogic pers = new PersonalLogic();
+           
             dataGridView1.DataSource = pers.TraerArticulos(textBox1.Text);
             dataGridView1.Columns[0].HeaderText = "Nombre del articulo";
             dataGridView1.Columns[1].HeaderText = "Precio";
@@ -72,6 +72,20 @@ namespace Presentacion
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult =  MessageBox.Show("Seguro que desea eliminar el articulo con id = " + dataGridView1.CurrentRow.Cells["Id1"].Value.ToString(), "SISTEMA", MessageBoxButtons.YesNo);
+            if(dialogResult == DialogResult.Yes)
+            {
+                string id;
+                id = dataGridView1.CurrentRow.Cells["Id1"].Value.ToString();
+                pers.Elimina_articulo(int.Parse(id));
+                MessageBox.Show("Articulo eliminado", "SISTEMA");
+                cargarinfo();
+            }
+           
         }
     }
 }

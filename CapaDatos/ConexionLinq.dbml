@@ -100,4 +100,8 @@
     <Parameter Name="Cantidad" Parameter="cantidad" Type="System.Decimal" DbType="Decimal(18,2)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.EliminaArticulo" Method="EliminaArticulo">
+    <Parameter Name="id_Articulo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
 </Database>

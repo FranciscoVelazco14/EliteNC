@@ -96,6 +96,12 @@ namespace Dominio
             L_Database.SubmitChanges();
         }
 
+        public void Elimina_articulo(int id)
+        {
+            L_Database.EliminaArticulo(id);
+            L_Database.SubmitChanges();
+        }
+
     }
 
 }

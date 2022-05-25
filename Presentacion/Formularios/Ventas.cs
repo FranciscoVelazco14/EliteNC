@@ -20,9 +20,12 @@ namespace Presentacion
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoResizeColumns();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         Dominio.PersonalLogic D = new Dominio.PersonalLogic();
         RegistrarNuevoUsuario regs = new RegistrarNuevoUsuario();
+        double suma, multi, iva,total;
         private void Ventas_Load(object sender, EventArgs e)
         {
             var traerEmpleados = D.TraerArticulos(textBox1.Text);
@@ -33,9 +36,10 @@ namespace Presentacion
             dataGridView1.Columns[1].HeaderText = "Precio";
             dataGridView1.Columns[2].HeaderText = "Medida";
             dataGridView1.Columns[3].HeaderText = "Clave SAT";
-            dataGridView1.Columns[4].HeaderText = "Imagen Articulo";
+            dataGridView1.Columns[4].Visible = false;
             dataGridView1.Columns[5].HeaderText = "Cantidad";
-            dataGridView1.Columns[6].HeaderText = "Id Articulo";
+            dataGridView1.Columns[6].Visible = false;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,7 +99,16 @@ namespace Presentacion
                     string ClavSat = dataGridView1.CurrentRow.Cells["ClaveSat1"].Value.ToString();
                     string cant = txtCantidad.Text;
                     dataGridView2.Rows.Add(new[] { nom, prec, med, ClavSat, cant });
-
+                    multi = double.Parse(prec) * double.Parse(cant);
+                    suma = suma + multi;
+                    iva = suma * .16;
+                    total = suma + iva;
+                    Txtsubtotal.Text =suma.ToString();
+                    Txtiva.Text = iva.ToString();
+                    Txttotal.Text = total.ToString();
+                    string cant2 = dataGridView1.CurrentRow.Cells["Cantidad1"].Value.ToString();
+                    dataGridView1.CurrentRow.Cells["Cantidad1"].Value = double.Parse(cant2) - double.Parse(cant);
+                    label3.Text = dataGridView1.CurrentRow.Cells["Cantidad1"].Value.ToString();
                 }
 
             }
