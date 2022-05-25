@@ -101,6 +101,11 @@ namespace Dominio
             L_Database.EliminaArticulo(id);
             L_Database.SubmitChanges();
         }
+        public void Actualiza_cantidad(int id,decimal cant)
+        {
+            L_Database.Actualiza_cantidad(id,cant);
+            L_Database.SubmitChanges();
+        }
 
     }
 

@@ -52,16 +52,17 @@ namespace Presentacion
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.Txtsubtotal = new System.Windows.Forms.TextBox();
-            this.Txtiva = new System.Windows.Forms.TextBox();
-            this.Txttotal = new System.Windows.Forms.TextBox();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClaveSat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
+            this.Lblsubtotal = new System.Windows.Forms.Label();
+            this.Lbliva = new System.Windows.Forms.Label();
+            this.Lbltotal = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreArticulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Medida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClaveSat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -90,10 +91,14 @@ namespace Presentacion
             // 
             // txtCantidad
             // 
+            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantidad.ForeColor = System.Drawing.Color.Black;
             this.txtCantidad.Location = new System.Drawing.Point(272, 366);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.ShortcutsEnabled = false;
+            this.txtCantidad.Size = new System.Drawing.Size(100, 24);
             this.txtCantidad.TabIndex = 6;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // label1
             // 
@@ -111,9 +116,9 @@ namespace Presentacion
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(193, 565);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 20);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Stock";
+            this.label2.Text = "Stock>";
             // 
             // label3
             // 
@@ -195,7 +200,7 @@ namespace Presentacion
             this.dataGridView1.RowHeadersVisible = false;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(65)))), ((int)(((byte)(90)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
@@ -243,6 +248,7 @@ namespace Presentacion
             this.button3.TabIndex = 19;
             this.button3.Text = "Realizar Venta";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_2);
             // 
             // label8
             // 
@@ -274,57 +280,6 @@ namespace Presentacion
             this.label10.TabIndex = 22;
             this.label10.Text = "Total:";
             // 
-            // Txtsubtotal
-            // 
-            this.Txtsubtotal.Location = new System.Drawing.Point(534, 511);
-            this.Txtsubtotal.Name = "Txtsubtotal";
-            this.Txtsubtotal.Size = new System.Drawing.Size(202, 20);
-            this.Txtsubtotal.TabIndex = 23;
-            // 
-            // Txtiva
-            // 
-            this.Txtiva.Location = new System.Drawing.Point(500, 542);
-            this.Txtiva.Name = "Txtiva";
-            this.Txtiva.Size = new System.Drawing.Size(202, 20);
-            this.Txtiva.TabIndex = 24;
-            // 
-            // Txttotal
-            // 
-            this.Txttotal.Location = new System.Drawing.Point(508, 576);
-            this.Txttotal.Name = "Txttotal";
-            this.Txttotal.Size = new System.Drawing.Size(202, 20);
-            this.Txttotal.TabIndex = 25;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            // 
-            // ClaveSat
-            // 
-            this.ClaveSat.HeaderText = "Clave Sat";
-            this.ClaveSat.Name = "ClaveSat";
-            this.ClaveSat.ReadOnly = true;
-            // 
-            // Medida
-            // 
-            this.Medida.HeaderText = "Medida";
-            this.Medida.Name = "Medida";
-            this.Medida.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // NombreArticulo
-            // 
-            this.NombreArticulo.HeaderText = "Nombre del articulo";
-            this.NombreArticulo.Name = "NombreArticulo";
-            this.NombreArticulo.ReadOnly = true;
-            // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToAddRows = false;
@@ -343,6 +298,7 @@ namespace Presentacion
             this.dataGridView2.ColumnHeadersHeight = 30;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.NombreArticulo,
             this.Precio,
             this.Medida,
@@ -386,15 +342,93 @@ namespace Presentacion
             this.label11.TabIndex = 26;
             this.label11.Text = "BUSCADOR*";
             // 
+            // Lblsubtotal
+            // 
+            this.Lblsubtotal.AutoSize = true;
+            this.Lblsubtotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lblsubtotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Lblsubtotal.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lblsubtotal.ForeColor = System.Drawing.Color.Red;
+            this.Lblsubtotal.Location = new System.Drawing.Point(535, 511);
+            this.Lblsubtotal.Name = "Lblsubtotal";
+            this.Lblsubtotal.Size = new System.Drawing.Size(64, 22);
+            this.Lblsubtotal.TabIndex = 27;
+            this.Lblsubtotal.Text = "label12";
+            this.Lblsubtotal.Visible = false;
+            // 
+            // Lbliva
+            // 
+            this.Lbliva.AutoSize = true;
+            this.Lbliva.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lbliva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Lbliva.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbliva.ForeColor = System.Drawing.Color.Red;
+            this.Lbliva.Location = new System.Drawing.Point(512, 542);
+            this.Lbliva.Name = "Lbliva";
+            this.Lbliva.Size = new System.Drawing.Size(64, 22);
+            this.Lbliva.TabIndex = 28;
+            this.Lbliva.Text = "label13";
+            this.Lbliva.Visible = false;
+            // 
+            // Lbltotal
+            // 
+            this.Lbltotal.AutoSize = true;
+            this.Lbltotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Lbltotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Lbltotal.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Lbltotal.ForeColor = System.Drawing.Color.Red;
+            this.Lbltotal.Location = new System.Drawing.Point(508, 576);
+            this.Lbltotal.Name = "Lbltotal";
+            this.Lbltotal.Size = new System.Drawing.Size(64, 22);
+            this.Lbltotal.TabIndex = 29;
+            this.Lbltotal.Text = "label14";
+            this.Lbltotal.Visible = false;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id del articulo";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // NombreArticulo
+            // 
+            this.NombreArticulo.HeaderText = "Nombre del articulo";
+            this.NombreArticulo.Name = "NombreArticulo";
+            this.NombreArticulo.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Medida
+            // 
+            this.Medida.HeaderText = "Medida";
+            this.Medida.Name = "Medida";
+            this.Medida.ReadOnly = true;
+            // 
+            // ClaveSat
+            // 
+            this.ClaveSat.HeaderText = "Clave Sat";
+            this.ClaveSat.Name = "ClaveSat";
+            this.ClaveSat.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
             // Ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 615);
+            this.Controls.Add(this.Lbltotal);
+            this.Controls.Add(this.Lbliva);
+            this.Controls.Add(this.Lblsubtotal);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.Txttotal);
-            this.Controls.Add(this.Txtiva);
-            this.Controls.Add(this.Txtsubtotal);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -442,15 +476,16 @@ namespace Presentacion
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox Txtsubtotal;
-        private System.Windows.Forms.TextBox Txtiva;
-        private System.Windows.Forms.TextBox Txttotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveSat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Medida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreArticulo;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label Lblsubtotal;
+        public System.Windows.Forms.Label Lbliva;
+        public System.Windows.Forms.Label Lbltotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreArticulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Medida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClaveSat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
     }
 }

@@ -25,12 +25,12 @@ namespace Presentacion
         private void button1_Click(object sender, EventArgs e)
         {
             PersonalLogic pers = new PersonalLogic();
-            if (textBox1.Text != "" && textBox4.Text != "")
+            if (textBox1.Text != "" && comboBox1.Text != "")
             {
                 if (pictureBox1.Image == Imagen)
                 {
                     MessageBox.Show("Articulo agregado correctamente");
-                    pers.CrearArticulos(textBox1.Text, numericUpDown1.Value, numericUpDown2.Value, textBox4.Text, textBox5.Text, "Si", "No", ConvertirImagen(pictureBox1.Image), numericUpDown3.Value);
+                    pers.CrearArticulos(textBox1.Text, numericUpDown1.Value, numericUpDown2.Value, comboBox1.Text, textBox5.Text, "Si", "No", ConvertirImagen(pictureBox1.Image), numericUpDown3.Value);
                 }
                 else
                 {
